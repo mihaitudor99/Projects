@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Builder with Collision Detection</title>
+  <style>
+    :root {
+      --grid-size: 5rem; /* Define grid size in rem */
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      background: #f4f4f9;
+    }
+
+    #left-panel, #center-panel, #right-panel {
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    #left-panel {
+      width: 20%;
+      margin: 10px;
+    }
+
+    #center-panel {
+      flex: 1;
+      margin: 10px;
+      background: #fafafa;
+      border: 2px dashed #ccc;
+      position: relative;
+      min-height: 400px;
+    }
+
+    #right-panel {
+      width: 20%;
+      margin: 10px;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 18px;
+      text-align: center;
+      color: #333;
+    }
+
+    .component {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 10px;
+      cursor: grab;
+      text-align: center;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .component:hover {
+      background: #f0f0f0;
+      transform: scale(1.03);
+    }
+
+    .form-element {
+      position: absolute;
+      padding: 10px;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      cursor: move;
+    }
+
+    .drag-placeholder {
+      position: absolute;
+      background: rgba(0, 123, 255, 0.2);
+      border: 1px dashed #007bff;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Left Panel -->
+  <div id="left-panel">
+    <h3>Components</h3>
+    <div class="component" draggable="true" data-type="text-field">Text Field</div>
+    <div class="component" draggable="true" data-type="textarea">Text Area</div>
+    <div class="component" draggable="true" data-type="checkbox">Checkbox</div>
+    <div class="component" draggable="true" data-type="button">Button</div>
+  </div>
+
+  <!-- Center Panel -->
+  <div id="center-panel">
+    <h3>Form Layout</h3>
+  </div>
+
+  <!-- Right Panel -->
+  <div id="right-panel">
+    <h3>Properties</h3>
+    <p>Select an element to edit its properties.</p>
+  </div>
+
+  <script>
+    const components = document.querySelectorAll(".component");
+    const centerPanel = document.getElementById("center-panel");
+    const gridSize = parseFloat(getComputedStyle(document.documentElement).fontSize); // Convert rem to px
+
+    // Array to store occupied grid cells
+    const occupiedCells = [];
+
+    // Enable dragging components from the left panel
+    components.forEach((component) => {
+      component.addEventListener("dragstart", (e) => {
+        e.dataTransfer.setData("type", e.target.getAttribute("data-type"));
+      });
+    });
+
+    // Create a placeholder for visual feedback
+    let placeholder = document.createElement("div");
+    placeholder.classList.add("drag-placeholder");
+    centerPanel.appendChild(placeholder);
+
+    centerPanel.addEventListener("dragover", (e) => {
+      e.preventDefault();
+
+      // Calculate grid snapping
+      const rect = centerPanel.getBoundingClientRect();
+      const x = Math.floor((e.clientX - rect.left) / gridSize) * gridSize;
+      const y = Math.floor((e.clientY - rect.top) / gridSize) * gridSize;
+
+      // Check if the cell is already occupied
+      if (!isCellOccupied(x, y)) {
+        placeholder.style.left = `${x / gridSize}rem`;
+        placeholder.style.top = `${y / gridSize}rem`;
+        placeholder.style.width = `var(--grid-size)`;
+        placeholder.style.height = `var(--grid-size)`;
+        placeholder.style.display = "block";
+      } else {
+        placeholder.style.display = "none"; // Hide if occupied
+      }
+    });
+
+    centerPanel.addEventListener("drop", (e) => {
+      e.preventDefault();
+
+      const type = e.dataTransfer.getData("type");
+
+      // Calculate grid snapping
+      const rect = centerPanel.getBoundingClientRect();
+      const x = Math.floor((e.clientX - rect.left) / gridSize) * gridSize;
+      const y = Math.floor((e.clientY - rect.top) / gridSize) * gridSize;
+
+      // Check if the cell is already occupied
+      if (!isCellOccupied(x, y)) {
+        // Add new component
+        const newElement = createFormElement(type);
+        if (newElement) {
+          newElement.style.left = `${x / gridSize}rem`;
+          newElement.style.top = `${y / gridSize}rem`;
+          centerPanel.appendChild(newElement);
+
+          // Mark the cell as occupied
+          occupiedCells.push({ x, y });
+        }
+      }
+
+      // Hide placeholder
+      placeholder.style.display = "none";
+    });
+
+    centerPanel.addEventListener("dragleave", () => {
+      placeholder.style.display = "none";
+    });
+
+    // Function to check if a cell is occupied
+    function isCellOccupied(x, y) {
+      return occupiedCells.some((cell) => cell.x === x && cell.y === y);
+    }
+
+    // Function to create form elements dynamically
+    function createFormElement(type) {
+      const wrapper = document.createElement("div");
+      wrapper.className = "form-element";
+
+      let content = "";
+
+      switch (type) {
+        case "text-field":
+          content = '<label>Text Field</label><input type="text" style="width: 100%;">';
+          break;
+        case "textarea":
+          content = '<label>Text Area</label><textarea style="width: 100%;"></textarea>';
+          break;
+        case "checkbox":
+          content = '<label><input type="checkbox"> Checkbox</label>';
+          break;
+        case "button":
+          content = '<button>Submit</button>';
+          break;
+        default:
+          return null;
+      }
+
+      wrapper.innerHTML = content;
+
+      // Enable moving of created elements
+      enableDrag(wrapper);
+
+      return wrapper;
+    }
+
+    // Enable dragging for created elements
+    function enableDrag(element) {
+      let offsetX = 0;
+      let offsetY = 0;
+
+      element.addEventListener("mousedown", (e) => {
+        offsetX = e.offsetX;
+        offsetY = e.offsetY;
+
+        const mouseMoveHandler = (moveEvent) => {
+          const rect = centerPanel.getBoundingClientRect();
+
+          // Calculate grid snapping
+          const x =
+            Math.floor((moveEvent.clientX - rect.left - offsetX) / gridSize) * gridSize;
+          const y =
+            Math.floor((moveEvent.clientY - rect.top - offsetY) / gridSize) * gridSize;
+
+          // Only move if the cell is not occupied
+          if (!isCellOccupied(x, y)) {
+            element.style.left = `${x / gridSize}rem`;
+            element.style.top = `${y / gridSize}rem`;
+          }
+        };
+
+        const mouseUpHandler = () => {
+          document.removeEventListener("mousemove", mouseMoveHandler);
+          document.removeEventListener("mouseup", mouseUpHandler);
+        };
+
+        document.addEventListener("mousemove", mouseMoveHandler);
+        document.addEventListener("mouseup", mouseUpHandler);
+      });
+    }
+  </script>
+</body>
+</html>

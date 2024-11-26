@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Builder</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      background: #f4f4f9;
+    }
+
+    #left-panel, #center-panel, #right-panel {
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    #left-panel {
+      width: 20%;
+      margin: 10px;
+    }
+
+    #center-panel {
+        width: 60%;
+        margin: 10px;
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start;
+        justify-content: flex-start;
+        border: 2px dashed #ccc;
+        background: #fafafa;
+        min-height: 300px;
+        }
+
+    #right-panel {
+      width: 20%;
+      margin: 10px;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 18px;
+      text-align: center;
+      color: #333;
+    }
+
+    .component {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 10px;
+      cursor: grab;
+      text-align: center;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+
+    .component:hover {
+      background: #f0f0f0;
+      transform: scale(1.03);
+    }
+
+    .form-element {
+        margin: 10px 0;
+        padding: 15px;
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        cursor: grab;
+        width: 100%; /* Default to full width */
+        max-width: 100%; /* Prevent overflowing */
+        box-sizing: border-box; /* Include padding in width */
+        }
+
+
+    .form-element.dragging {
+      opacity: 0.5;
+      border: 2px dashed #aaa;
+    }
+
+    .form-element label {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.form-element input, 
+.form-element textarea, 
+.form-element button {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%; /* Stretch to fit the form element width */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+    .form-element div {
+        display: block;
+        }
+
+        @media (max-width: 768px) {
+        body {
+            flex-direction: column; /* Stack panels vertically */
+        }
+
+        #left-panel,
+        #right-panel {
+            width: 100%;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+
+        #center-panel {
+            width: 100%; /* Full width for smaller screens */
+            margin: 0;
+            border: 1px solid #ddd; /* Optional: refine borders for smaller screens */
+        }
+
+        .form-element {
+            width: 100%; /* Full width for elements */
+            margin: 5px 0; /* Reduced margin for tighter layout */
+        }
+        }
+  </style>
+</head>
+<body>
+  <!-- Left Panel -->
+  <div id="left-panel">
+    <h3>Components</h3>
+    <div class="component" draggable="true" data-type="text-field">Text Field</div>
+    <div class="component" draggable="true" data-type="textarea">Text Area</div>
+    <div class="component" draggable="true" data-type="checkbox">Checkbox</div>
+    <div class="component" draggable="true" data-type="button">Button</div>
+  </div>
+
+  <!-- Center Panel -->
+  <div id="center-panel">
+    <h3>Form Layout</h3>
+  </div>
+
+  <!-- Right Panel -->
+  <div id="right-panel">
+    <h3>Properties</h3>
+    <p>Select an element to edit its properties.</p>
+  </div>
+
+  <script>
+    const components = document.querySelectorAll(".component");
+    const centerPanel = document.getElementById("center-panel");
+
+    // Allow dragging components from the left panel
+    document.querySelectorAll(".component").forEach((component) => {
+  component.addEventListener("dragstart", (e) => {
+    e.dataTransfer.setData("type", e.target.getAttribute("data-type"));
+  });
+});
+
+
+centerPanel.addEventListener("dragover", (e) => {
+  e.preventDefault();
+});
+
+centerPanel.addEventListener("drop", (e) => {
+  e.preventDefault();
+  const type = e.dataTransfer.getData("type");
+  const newElement = createFormElement(type);
+  if (newElement) {
+    centerPanel.appendChild(newElement);
+  }
+});
+
+// Function to create form elements dynamically
+function createFormElement(type) {
+  const wrapper = document.createElement("div");
+  wrapper.className = "form-element";
+  wrapper.draggable = true;
+  wrapper.style.position = "relative"; // For positioning child elements
+
+  // Create container for label and input
+  const contentContainer = document.createElement("div");
+  contentContainer.style.display = "flex";
+  contentContainer.style.flexDirection = "column"; // Arrange label above input
+  contentContainer.style.gap = "5px"; // Spacing between label and input
+
+  let content = "";
+
+  switch (type) {
+    case "text-field":
+      content = `
+        <label>Text Field:</label>
+        <input type="text" placeholder="Enter text" />
+      `;
+      break;
+
+    case "textarea":
+      content = `
+        <label>Text Area:</label>
+        <textarea placeholder="Enter text"></textarea>
+      `;
+      break;
+
+    case "checkbox":
+      contentContainer.style.flexDirection = "row"; // Inline checkbox with label
+      contentContainer.style.alignItems = "center"; // Align items vertically
+      content = `
+        <input type="checkbox" />
+        <label style="margin-left: 5px;">Checkbox</label>
+      `;
+      break;
+
+    case "button":
+      contentContainer.style.flexDirection = "row"; // Inline button with label
+      content = `<button>Submit</button>`;
+      break;
+
+    default:
+      return null;
+  }
+
+  contentContainer.innerHTML = content;
+  wrapper.appendChild(contentContainer);
+
+  // Add trash icon as delete button
+  const deleteButton = document.createElement("i");
+  deleteButton.className = "fas fa-trash";
+  deleteButton.style.position = "absolute";
+  deleteButton.style.top = "5px";
+  deleteButton.style.right = "5px";
+  deleteButton.style.color = "red";
+  deleteButton.style.fontSize = "16px";
+  deleteButton.style.cursor = "pointer";
+  deleteButton.addEventListener("click", () => {
+    wrapper.remove(); // Remove the form element
+  });
+  wrapper.appendChild(deleteButton);
+
+  // Add resize grip for width-only resizing
+  const resizeGrip = document.createElement("div");
+  resizeGrip.style.position = "absolute";
+  resizeGrip.style.right = "-0.7rem";
+  resizeGrip.style.top = "50%";
+  resizeGrip.style.transform = "translateY(-50%)";
+  resizeGrip.style.cursor = "ew-resize"; // Resize horizontally
+  resizeGrip.style.fontSize = "20px";
+  resizeGrip.style.color = "blue";
+  resizeGrip.innerHTML = "&#x2194;"; // Unicode arrow for resizing
+  wrapper.appendChild(resizeGrip);
+
+  // Resize logic
+  resizeGrip.addEventListener("mousedown", (e) => {
+    e.preventDefault();
+    const startX = e.clientX;
+    const startWidth = parseInt(window.getComputedStyle(wrapper).width, 10);
+
+    function handleMouseMove(event) {
+      const width = Math.max(startWidth + event.clientX - startX, 50); // Minimum width of 50px
+      wrapper.style.width = `${width}px`;
+    }
+
+    function handleMouseUp() {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mouseup", handleMouseUp);
+    }
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mouseup", handleMouseUp);
+  });
+
+  // Enable dragging the element
+  wrapper.addEventListener("dragstart", (e) => {
+    e.dataTransfer.effectAllowed = "move";
+    wrapper.classList.add("dragging");
+  });
+
+  wrapper.addEventListener("dragend", () => {
+    wrapper.classList.remove("dragging");
+  });
+
+  return wrapper;
+}
+
+// Rearrange elements inside the center panel
+centerPanel.addEventListener("dragover", (e) => {
+  e.preventDefault();
+  const draggingElement = document.querySelector(".dragging");
+  if (!draggingElement) return;
+
+  const afterElement = getDragAfterElement(centerPanel, e.clientY);
+  if (afterElement == null) {
+    centerPanel.appendChild(draggingElement);
+  } else {
+    centerPanel.insertBefore(draggingElement, afterElement);
+  }
+});
+
+// Function to determine the position for inserting the dragged element
+function getDragAfterElement(container, y) {
+  const draggableElements = [...container.querySelectorAll(".form-element:not(.dragging)")];
+  return draggableElements.reduce(
+    (closest, child) => {
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
+
+      if (offset < 0 && offset > closest.offset) {
+        return { offset, element: child };
+      } else {
+        return closest;
+      }
+    },
+    { offset: Number.NEGATIVE_INFINITY }
+  ).element;
+}
+
+  </script>
+</body>
+</html>
