@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Builder</title>
+    <style>
+      #form-builder {
+        display: flex;
+        height: 100vh;
+        gap: 20px; /* Spațiu între carduri */
+        padding: 20px; /* Spațiu între marginea ecranului și conținut */
+        background: #f7f7f7; /* Fundal general */
+        box-sizing: border-box;
+      }
+
+      #left-panel,
+      #center-panel,
+      #right-panel {
+        background: #ffffff; /* Fundal alb pentru card */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbra cardului */
+        border-radius: 10px; /* Colțuri rotunjite */
+        padding: 15px; /* Spațiu interior */
+        border: 1px solid #e0e0e0; /* Bordură discretă */
+        overflow: auto; /* Dacă conținutul depășește, să apară scroll */
+      }
+
+      #left-panel,
+      #right-panel {
+        width: 20%; /* Lățime fixă pentru panourile laterale */
+      }
+
+      #center-panel {
+        flex: 1; /* Panoul din mijloc să ocupe spațiul rămas */
+        position: relative; /* Permite poziționare absolută pentru elementele din interior */
+      }
+
+      h3 {
+        margin-top: 0;
+        font-size: 18px;
+        color: #333;
+      }
+
+      /* Asigură responsivitate */
+      @media (max-width: 768px) {
+        #form-builder {
+          flex-direction: column; /* Cardurile se aliniază pe verticală */
+          gap: 10px;
+        }
+
+        #left-panel,
+        #right-panel {
+          width: 100%; /* Ocupă toată lățimea pe dispozitive mici */
+        }
+
+        #center-panel {
+          width: 100%;
+        }
+      }
+
+      #right-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Aliniază conținutul la stânga */
+      }
+
+      #view-controls {
+        margin-top: 20px; /* Distanță față de restul conținutului */
+        display: flex;
+        gap: 10px; /* Spațiu între butoane */
+      }
+
+      #view-controls button {
+        font-size: 18px;
+        padding: 10px;
+        background: #ddd;
+        border: 1px solid #bbb;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      #view-controls button:hover {
+        background: #ccc;
+      }
+
+      .draggable {
+        position: absolute; /* Permite mutarea liberă */
+        cursor: move; /* Iconiță pentru mutare */
+      }
+
+      .removable {
+        margin: 5px;
+        position: relative;
+      }
+
+      .removable button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        padding: 2px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="form-builder">
+      <div id="left-panel">
+        <h3>Componente</h3>
+        <button class="component" data-type="input-text" draggable="true">
+          Input Text
+        </button>
+        <button class="component" data-type="textarea" draggable="true">
+          Textarea
+        </button>
+        <button class="component" data-type="container" draggable="true">
+          Container
+        </button>
+      </div>
+      <div id="center-panel">
+        <h3>Form Designer</h3>
+        <p>Drag and drop componente aici.</p>
+      </div>
+      <div id="right-panel">
+        <h3>Proprietăți</h3>
+        <div id="view-controls">
+          <button id="desktop-view" title="Desktop View">🖥️</button>
+          <button id="mobile-view" title="Mobile View">📱</button>
+        </div>
+        <button id="reverse-button" style="margin-top: 20px">Undo</button>
+      </div>
+    </div>
+    <script>
+      // Evenimente pentru drag-and-drop
+      document.querySelectorAll(".component").forEach((button) => {
+        button.addEventListener("dragstart", (e) => {
+          e.dataTransfer.setData("type", e.target.dataset.type);
+        });
+      });
+
+      const centerPanel = document.getElementById("center-panel");
+      const reverseStack = []; // Stocăm elementele șterse pentru Undo
+
+      centerPanel.addEventListener("dragover", (e) => {
+        e.preventDefault();
+      });
+
+      centerPanel.addEventListener("drop", (e) => {
+        e.preventDefault();
+        const type = e.dataTransfer.getData("type");
+        const { offsetX, offsetY } = e; // Coordonatele unde este plasat
+
+        let newElement;
+
+        switch (type) {
+          case "input-text":
+            newElement = document.createElement("div");
+            newElement.className = "draggable removable";
+            newElement.style.left = `${offsetX}px`;
+            newElement.style.top = `${offsetY}px`;
+            newElement.innerHTML = `
+              <input type="text" placeholder="Text input" />
+              <button class="remove">X</button>
+            `;
+            break;
+          case "textarea":
+            newElement = document.createElement("div");
+            newElement.className = "draggable removable";
+            newElement.style.left = `${offsetX}px`;
+            newElement.style.top = `${offsetY}px`;
+            newElement.innerHTML = `
+              <textarea placeholder="Textarea"></textarea>
+              <button class="remove">X</button>
+            `;
+            break;
+          case "container":
+            newElement = document.createElement("div");
+            newElement.className = "draggable removable";
+            newElement.style.left = `${offsetX}px`;
+            newElement.style.top = `${offsetY}px`;
+            newElement.style.border = "1px dashed #000";
+            newElement.style.padding = "10px";
+            newElement.innerHTML = `
+              Container
+              <button class="remove">X</button>
+            `;
+            break;
+        }
+
+        if (newElement) {
+          centerPanel.appendChild(newElement);
+
+          // Eveniment pentru mutarea elementului
+          newElement.addEventListener("mousedown", (event) => {
+            const element = event.target.closest(".draggable");
+            const startX = event.clientX - element.offsetLeft;
+            const startY = event.clientY - element.offsetTop;
+
+            const onMouseMove = (moveEvent) => {
+              element.style.left = `${moveEvent.clientX - startX}px`;
+              element.style.top = `${moveEvent.clientY - startY}px`;
+            };
+
+            const onMouseUp = () => {
+              document.removeEventListener("mousemove", onMouseMove);
+              document.removeEventListener("mouseup", onMouseUp);
+            };
+
+            document.addEventListener("mousemove", onMouseMove);
+            document.addEventListener("mouseup", onMouseUp);
+          });
+
+          // Eveniment pentru ștergere
+          newElement.querySelector(".remove").addEventListener("click", () => {
+            reverseStack.push(newElement.outerHTML);
+            newElement.remove();
+          });
+        }
+      });
+
+      // Undo
+      document
+        .getElementById("reverse-button")
+        .addEventListener("click", () => {
+          const lastChange = reverseStack.pop();
+          if (lastChange) {
+            centerPanel.insertAdjacentHTML("beforeend", lastChange);
+          }
+        });
+    </script>
+  </body>
+</html>
