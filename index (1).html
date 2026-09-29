@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DZR Clinics | Clinică stomatologică – Implanturi, Estetică dentară</title>
+    <meta name="description"
+        content="DZR Clinics – clinică stomatologică modernă: implanturi dentare, ortodonție, fațete, albire și tratamente pentru întreaga familie. Programează-te online.">
+    <link rel="canonical" href="https://dzrclinics.ro/">
+    <link rel="alternate" hreflang="ro" href="https://dzrclinics.ro/">
+    <link rel="alternate" hreflang="en" href="https://dzrclinics.ro/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://dzrclinics.ro/">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#a58b68">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DZR Clinics">
+    <meta property="og:title" content="DZR Clinics – Clinică stomatologică">
+    <meta property="og:description" content="Implanturi, estetică dentară și tratamente pentru întreaga familie.">
+    <meta property="og:url" content="https://dzrclinics.ro/">
+    <meta property="og:image" content="https://dzrclinics.ro/logoDZR.jpg">
+    <meta property="og:locale" content="ro_RO">
+    <link rel="icon" type="image/jpeg" href="faviconDZR.jpg">
+    <link rel="apple-touch-icon" href="faviconDZR.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Dentist",
+            "name": "DZR Clinics",
+            "url": "https://dzrclinics.ro/",
+            "logo": "https://dzrclinics.ro/logoDZR.jpg",
+            "image": "https://dzrclinics.ro/logoDZR.jpg",
+            "telephone": "+40 000 000 000",
+            "email": "contact@dzrclinics.ro",
+            "priceRange": "$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Strada Exemplu 1",
+                "addressLocality": "București",
+                "addressCountry": "RO"
+            },
+            "openingHours": ["Mo-Fr 09:00-19:00", "Sa 09:00-14:00"],
+            "medicalSpecialty": "Dentistry",
+            "availableLanguage": ["ro", "en"]
+        }
+    </script>
+    <style>
+        :root {
+            --gold: #a58b68;
+            --gold-d: #8a7254;
+            --gold-l: #efe6d8;
+            --ink: #3f3f3f;
+            --soft: #faf7f2
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: Inter, system-ui, sans-serif;
+            font-weight: 300;
+            color: var(--ink);
+            background: #fff;
+            line-height: 1.7
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .h5 {
+            font-family: "Cormorant Garamond", Georgia, serif;
+            font-weight: 600;
+            letter-spacing: .01em;
+            color: #2f2f2f
+        }
+
+        h2 {
+            font-size: 2.6rem
+        }
+
+        .h5 {
+            font-size: 1.6rem
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gold-l);
+            transition: box-shadow .3s
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .07)
+        }
+
+        .navbar img {
+            height: 54px;
+            width: auto
+        }
+
+        .nav-link {
+            color: var(--ink) !important;
+            font-weight: 400;
+            font-size: .95rem;
+            letter-spacing: .04em
+        }
+
+        .nav-link:hover {
+            color: var(--gold) !important
+        }
+
+        .btn {
+            border-radius: 50px;
+            letter-spacing: .06em;
+            font-weight: 500;
+            padding: .6rem 1.6rem;
+            transition: all .3s
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #b89e7a, var(--gold-d));
+            border: 0;
+            color: #fff;
+            box-shadow: 0 6px 18px rgba(165, 139, 104, .35)
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            color: #fff;
+            box-shadow: 0 10px 24px rgba(165, 139, 104, .45)
+        }
+
+        .btn-outline-gold {
+            border: 1px solid var(--gold);
+            color: var(--gold-d)
+        }
+
+        .btn-outline-gold:hover {
+            background: var(--gold);
+            color: #fff
+        }
+
+        .lang button {
+            border: 0;
+            background: none;
+            color: #999;
+            font-weight: 500;
+            padding: .2rem .4rem
+        }
+
+        .lang button.active {
+            color: var(--gold-d);
+            border-bottom: 2px solid var(--gold)
+        }
+
+        .hero {
+            padding: 5rem 0 7rem;
+            background: radial-gradient(circle at 85% 20%, var(--gold-l) 0, transparent 45%), radial-gradient(circle at 0 100%, #f6efe4 0, transparent 40%), #fff;
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            left: -10%;
+            right: -10%;
+            top: 52%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: .35
+        }
+
+        .eyebrow {
+            color: var(--gold-d);
+            text-transform: uppercase;
+            letter-spacing: .3em;
+            font-size: .78rem;
+            font-weight: 500
+        }
+
+        .hero h1 {
+            font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+            line-height: 1.08;
+            margin: .5rem 0 1.2rem
+        }
+
+        .hero .lead {
+            font-weight: 300;
+            max-width: 520px;
+            margin-bottom: 2rem
+        }
+
+        .logo-card {
+            background: #fff;
+            border-radius: 50%;
+            max-width: 380px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            box-shadow: 0 30px 70px rgba(165, 139, 104, .25);
+            border: 1px solid var(--gold-l);
+            outline: 14px solid rgba(255, 255, 255, .6);
+            animation: fl 6s ease-in-out infinite
+        }
+
+        .logo-card img {
+            width: 100%;
+            border-radius: 50%
+        }
+
+        @keyframes fl {
+            50% {
+                transform: translateY(-12px)
+            }
+        }
+
+        .stats {
+            margin-top: -3.5rem;
+            position: relative;
+            z-index: 2
+        }
+
+        .stats .box {
+            background: #fff;
+            border-radius: 1.2rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .08)
+        }
+
+        .num {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--gold-d);
+            line-height: 1
+        }
+
+        .stats .col-4+.col-4 {
+            border-left: 1px solid var(--gold-l)
+        }
+
+        section {
+            padding: 6rem 0
+        }
+
+        .alt {
+            background: var(--soft)
+        }
+
+        .divider {
+            width: 70px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin: 1rem auto 3rem
+        }
+
+        .card {
+            border: 1px solid var(--gold-l);
+            border-radius: 1.2rem;
+            box-shadow: none;
+            height: 100%;
+            transition: all .35s;
+            background: #fff
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 44px rgba(165, 139, 104, .2);
+            border-color: var(--gold)
+        }
+
+        .ico {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: var(--gold-l);
+            color: var(--gold-d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+            transition: .35s
+        }
+
+        .card:hover .ico {
+            background: var(--gold);
+            color: #fff
+        }
+
+        .why .ico {
+            margin: 0 auto 1.2rem;
+            width: 70px;
+            height: 70px;
+            font-size: 1.8rem
+        }
+
+        .form-panel {
+            background: #fff;
+            border-radius: 1.4rem;
+            padding: 2.5rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .08)
+        }
+
+        .form-control {
+            border-radius: .8rem;
+            border: 1px solid #e5ddd0;
+            padding: .8rem 1rem;
+            background: var(--soft)
+        }
+
+        .form-control:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 .2rem rgba(165, 139, 104, .2);
+            background: #fff
+        }
+
+        .info i {
+            color: var(--gold);
+            margin-right: .6rem
+        }
+
+        .info a {
+            color: var(--ink);
+            text-decoration: none
+        }
+
+        .info a:hover {
+            color: var(--gold-d)
+        }
+
+        footer {
+            background: #2f2f2f;
+            color: #bbb;
+            padding: 2.5rem 0;
+            font-size: .9rem
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none
+        }
+
+        .sticky-call {
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+            z-index: 99
+        }
+
+        .js .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .8s, transform .8s
+        }
+
+        .js .reveal.in {
+            opacity: 1;
+            transform: none
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            .logo-card {
+                animation: none
+            }
+
+            .js .reveal {
+                opacity: 1;
+                transform: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#top"><img src="logoDZR.jpg" alt="DZR Clinics – logo"></a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Menu"><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#services" data-i18n="n1">Servicii</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#why" data-i18n="n2">De ce DZR</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="n3">Contact</a></li>
+                    <li class="nav-item lang mx-lg-3"><button data-l="ro" class="active">RO</button>|<button
+                            data-l="en">EN</button></li>
+                    <li class="nav-item"><a class="btn btn-gold" href="#contact" data-i18n="cta">Programează-te</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="top">
+        <header class="hero">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-7 text-center text-lg-start">
+                        <p class="eyebrow" data-i18n="tag">Clinică stomatologică</p>
+                        <h1 data-i18n="h1">Zâmbetul tău, la cel mai înalt standard</h1>
+                        <p class="lead" data-i18n="sub">Tehnologie modernă, echipă dedicată și tratamente personalizate
+                            pentru întreaga familie.</p>
+                        <a href="#contact" class="btn btn-gold btn-lg me-2 mb-2" data-i18n="cta">Programează-te</a>
+                        <a href="#services" class="btn btn-outline-gold btn-lg mb-2" data-i18n="more">Vezi
+                            serviciile</a>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="logo-card mx-auto"><img src="logoDZR.jpg" alt="DZR Clinics – clinică stomatologică">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container stats">
+            <div class="box row g-0 text-center">
+                <div class="col-4 p-3 p-md-4">
+                    <div class="num">15+</div>
+                    <div class="small" data-i18n="a1">ani de experiență</div>
+                </div>
+                <div class="col-4 p-3 p-md-4">
+                    <div class="num">5000+</div>
+                    <div class="small" data-i18n="a2">pacienți mulțumiți</div>
+                </div>
+                <div class="col-4 p-3 p-md-4">
+                    <div class="num">100%</div>
+                    <div class="small" data-i18n="a3">costuri transparente</div>
+                </div>
+            </div>
+        </div>
+
+        <section id="services" class="alt">
+            <div class="container text-center">
+                <h2 data-i18n="st">Serviciile noastre</h2>
+                <div class="divider"></div>
+                <div class="row g-4 text-start">
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card p-4 reveal">
+                            <div class="ico"><i class="bi bi-gem"></i></div>
+                            <h3 class="h5" data-i18n="s1t">Implanturi dentare</h3>
+                            <p class="mb-0" data-i18n="s1d">Soluții fixe, durabile, planificate digital.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card p-4 reveal">
+                            <div class="ico"><i class="bi bi-stars"></i></div>
+                            <h3 class="h5" data-i18n="s2t">Estetică dentară</h3>
+                            <p class="mb-0" data-i18n="s2d">Fațete, coroane și design de zâmbet.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card p-4 reveal">
+                            <div class="ico"><i class="bi bi-emoji-smile"></i></div>
+                            <h3 class="h5" data-i18n="s3t">Ortodonție</h3>
+                            <p class="mb-0" data-i18n="s3d">Aparate dentare clasice și alignere transparente.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card p-4 reveal">
+                            <div class="ico"><i class="bi bi-brightness-high"></i></div>
+                            <h3 class="h5" data-i18n="s4t">Albire dentară</h3>
+                            <p class="mb-0" data-i18n="s4d">Rezultate vizibile, în siguranță, într-o singură ședință.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card p-4 reveal">
+                            <div class="ico"><i class="bi bi-heart-pulse"></i></div>
+                            <h3 class="h5" data-i18n="s5t">Stomatologie generală</h3>
+                            <p class="mb-0" data-i18n="s5d">Consultații, detartraj, tratamente de canal și obturații.
+                            </p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card p-4 reveal">
+                            <div class="ico"><i class="bi bi-balloon-heart"></i></div>
+                            <h3 class="h5" data-i18n="s6t">Pedodonție</h3>
+                            <p class="mb-0" data-i18n="s6d">Îngrijire blândă pentru cei mici, fără stres.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why" class="why">
+            <div class="container text-center">
+                <h2 data-i18n="wt">De ce DZR Clinics</h2>
+                <div class="divider"></div>
+                <div class="row g-4">
+                    <div class="col-md-4 reveal">
+                        <div class="ico"><i class="bi bi-cpu"></i></div>
+                        <h3 class="h5" data-i18n="w1t">Tehnologie modernă</h3>
+                        <p data-i18n="w1d">Radiologie digitală și planificare 3D pentru precizie maximă.</p>
+                    </div>
+                    <div class="col-md-4 reveal">
+                        <div class="ico"><i class="bi bi-clipboard2-check"></i></div>
+                        <h3 class="h5" data-i18n="w2t">Plan personalizat</h3>
+                        <p data-i18n="w2d">Fiecare tratament este explicat clar, cu costuri transparente.</p>
+                    </div>
+                    <div class="col-md-4 reveal">
+                        <div class="ico"><i class="bi bi-shield-heart"></i></div>
+                        <h3 class="h5" data-i18n="w3t">Confort și încredere</h3>
+                        <p data-i18n="w3d">Un mediu relaxant și o echipă care te ascultă.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="alt">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-5 info">
+                        <h2 data-i18n="ct">Programează o consultație</h2>
+                        <div class="divider ms-0"></div>
+                        <p data-i18n="cd">Scrie-ne și te contactăm în cel mai scurt timp.</p>
+                        <p class="mb-1"><i class="bi bi-telephone"></i><strong data-i18n="ph">Telefon:</strong> <a
+                                href="tel:+40000000000">+40 000 000 000</a></p>
+                        <p class="mb-1"><i class="bi bi-envelope"></i><strong>Email:</strong> <a
+                                href="mailto:contact@dzrclinics.ro">contact@dzrclinics.ro</a></p>
+                        <p class="mb-1"><i class="bi bi-geo-alt"></i><strong data-i18n="ad">Adresă:</strong> Strada
+                            Exemplu 1, București</p>
+                        <p><i class="bi bi-clock"></i><strong data-i18n="hr">Program:</strong> <span
+                                data-i18n="hv">Luni–Vineri 09–19, Sâmbătă 09–14</span></p>
+                    </div>
+                    <div class="col-lg-7">
+                        <!-- TODO: point action to your backend / Formspree / mail script -->
+                        <form action="#" method="post" class="row g-3 form-panel">
+                            <div class="col-md-6"><input class="form-control" name="name" required data-i18n-ph="fn"
+                                    placeholder="Nume" aria-label="Name"></div>
+                            <div class="col-md-6"><input class="form-control" name="phone" type="tel" required
+                                    data-i18n-ph="fp" placeholder="Telefon" aria-label="Phone"></div>
+                            <div class="col-12"><textarea class="form-control" name="msg" rows="4" data-i18n-ph="fm"
+                                    placeholder="Cum te putem ajuta?" aria-label="Message"></textarea></div>
+                            <div class="col-12 form-check ms-2"><input type="checkbox" class="form-check-input"
+                                    id="gdpr" required><label for="gdpr" class="form-check-label small"
+                                    data-i18n="gd">Sunt de acord cu prelucrarea datelor personale (GDPR).</label></div>
+                            <div class="col-12"><button class="btn btn-gold btn-lg" data-i18n="send">Trimite</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <a href="tel:+40000000000" class="btn btn-gold rounded-pill shadow sticky-call d-lg-none" data-i18n="call">Sună
+        acum</a>
+
+    <footer>
+        <div class="container d-flex flex-wrap justify-content-between gap-2">
+            <span>© <span id="y"></span> DZR Clinics · dzrclinics.ro</span>
+            <span><a href="#" data-i18n="pv">Politica de confidențialitate</a> · <a href="#" data-i18n="tm">Termeni</a>
+                · <a href="https://anpc.ro" rel="noopener">ANPC</a></span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Future: <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+    <script>
+        document.documentElement.classList.add("js");
+        const T = {
+            en: {
+                n1: "Services",
+                n2: "Why DZR",
+                n3: "Contact",
+                cta: "Book an appointment",
+                tag: "Dental clinic",
+                h1: "Your smile, at the highest standard",
+                sub: "Modern technology, a dedicated team and personalised treatments for the whole family.",
+                more: "View services",
+                st: "Our services",
+                s1t: "Dental implants",
+                s1d: "Fixed, long-lasting solutions planned digitally.",
+                s2t: "Cosmetic dentistry",
+                s2d: "Veneers, crowns and smile design.",
+                s3t: "Orthodontics",
+                s3d: "Traditional braces and clear aligners.",
+                s4t: "Teeth whitening",
+                s4d: "Visible results, safely, in a single session.",
+                s5t: "General dentistry",
+                s5d: "Check-ups, scaling, root canals and fillings.",
+                s6t: "Paediatric dentistry",
+                s6d: "Gentle, stress-free care for little ones.",
+                wt: "Why DZR Clinics",
+                w1t: "Modern technology",
+                w1d: "Digital radiology and 3D planning for maximum precision.",
+                w2t: "Personalised plan",
+                w2d: "Every treatment clearly explained, with transparent costs.",
+                w3t: "Comfort and trust",
+                w3d: "A relaxing environment and a team that listens.",
+                ct: "Book a consultation",
+                cd: "Write to us and we'll get back to you shortly.",
+                ph: "Phone:",
+                ad: "Address:",
+                hr: "Hours:",
+                hv: "Mon–Fri 09–19, Sat 09–14",
+                fn: "Name",
+                fp: "Phone",
+                fm: "How can we help?",
+                gd: "I agree to the processing of my personal data (GDPR).",
+                send: "Send",
+                call: "Call now",
+                pv: "Privacy policy",
+                tm: "Terms",
+                a1: "years of experience",
+                a2: "happy patients",
+                a3: "transparent pricing",
+                _t: "DZR Clinics | Dental clinic – Implants, Cosmetic Dentistry",
+                _d: "DZR Clinics – modern dental clinic: implants, orthodontics, veneers, whitening and family care. Book online."
+            }
+        };
+        const RO = {};
+        document.querySelectorAll("[data-i18n]").forEach(e => RO[e.dataset.i18n] = e.textContent);
+        document.querySelectorAll("[data-i18n-ph]").forEach(e => RO[e.dataset.i18nPh] = e.placeholder);
+        RO._t = document.title;
+        RO._d = document.querySelector('meta[name=description]').content;
+        T.ro = RO;
+
+        function setLang(l) {
+            const d = T[l] || RO;
+            document.querySelectorAll("[data-i18n]").forEach(e => e.textContent = d[e.dataset.i18n]);
+            document.querySelectorAll("[data-i18n-ph]").forEach(e => e.placeholder = d[e.dataset.i18nPh]);
+            document.documentElement.lang = l;
+            document.title = d._t;
+            document.querySelector('meta[name=description]').content = d._d;
+            document.querySelector('meta[property="og:locale"]').content = l == "ro" ? "ro_RO" : "en_US";
+            document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("active", b.dataset.l == l));
+            try {
+                localStorage.setItem("lang", l)
+            } catch (e) {}
+        }
+        document.querySelectorAll(".lang button").forEach(b => b.onclick = () => setLang(b.dataset.l));
+        let q = new URLSearchParams(location.search).get("lang"),
+            s;
+        try {
+            s = localStorage.getItem("lang")
+        } catch (e) {}
+        setLang(q || s || "ro");
+        document.getElementById("y").textContent = new Date().getFullYear();
+        const nb = document.querySelector(".navbar");
+        addEventListener("scroll", () => nb.classList.toggle("scrolled", scrollY > 10));
+        const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io.unobserve(e.target)
+            }
+        }), {
+            threshold: .15
+        }) : null;
+        document.querySelectorAll(".reveal").forEach(e => io ? io.observe(e) : e.classList.add("in"));
+    </script>
+</body>
+
+</html>
