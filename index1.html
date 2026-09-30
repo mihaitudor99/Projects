@@ -389,13 +389,6 @@ footer li{margin-bottom:9px}footer a:hover{color:var(--gold)}
 <div class="sticky"><a href="tel:+40721234567" class="c">Sună</a><a href="https://wa.me/40721234567" target="_blank" rel="noopener" class="w">WhatsApp</a></div>
 
 <script>
-const dr=document.getElementById('dr'),close=()=>dr.classList.remove('open');
-document.getElementById('bb').onclick=()=>dr.classList.add('open');
-document.getElementById('dc').onclick=close;
-dr.onclick=e=>{if(e.target===dr||e.target.tagName==='A')close()};
-document.getElementById('f').onsubmit=e=>{e.preventDefault();const b=e.target.querySelector('button');b.textContent='Solicitare trimisă. Te sunăm noi.';b.disabled=true};
-</script>
-<script>
 const dr = document.getElementById('dr');
 
 const close = () => dr.classList.remove('open');
