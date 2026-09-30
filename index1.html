@@ -185,6 +185,78 @@ footer li{margin-bottom:9px}footer a:hover{color:var(--gold)}
 .sgrid,.tgrid2,.cgrid,.fg4{grid-template-columns:1fr}.cgrid{gap:44px}.tgrid{grid-template-columns:repeat(2,1fr)}.srow{grid-template-columns:repeat(2,1fr)}
 .sticky{display:flex}body{padding-bottom:72px}.fb{flex-direction:column;text-align:center}.fb a{margin:0 8px}}
 @media(max-width:600px){.acts{flex-direction:column}.acts .btn{width:100%}.fr{grid-template-columns:1fr}.form{padding:26px}}
+/* SCROLL ANIMATIONS */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity .8s cubic-bezier(.2,.7,.2,1),
+        transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition:
+        opacity .8s cubic-bezier(.2,.7,.2,1),
+        transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition:
+        opacity .8s cubic-bezier(.2,.7,.2,1),
+        transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stagger pentru carduri */
+.stagger > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity .7s cubic-bezier(.2,.7,.2,1),
+        transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+.stagger.visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stagger.visible > *:nth-child(1) { transition-delay: .05s; }
+.stagger.visible > *:nth-child(2) { transition-delay: .12s; }
+.stagger.visible > *:nth-child(3) { transition-delay: .19s; }
+.stagger.visible > *:nth-child(4) { transition-delay: .26s; }
+.stagger.visible > *:nth-child(5) { transition-delay: .33s; }
+.stagger.visible > *:nth-child(6) { transition-delay: .40s; }
+
+/* Mic efect pentru imaginea hero */
+#hero {
+    background-attachment: scroll;
+}
+
+@media (min-width: 901px) {
+    #hero {
+        background-attachment: fixed;
+    }
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -220,7 +292,7 @@ footer li{margin-bottom:9px}footer a:hover{color:var(--gold)}
   </div>
 </div></section>
 
-<section id="stats"><div class="wrap"><div class="srow">
+<section id="stats"><div class="wrap"><div class="srow stagger">
   <div class="sc"><b>18+ medici</b><span>Specialiști de top</span><small>Toate domeniile acoperite</small></div>
   <div class="sc"><b>Radiologie</b><span>Digitală, in-house</span><small>Diagnostic complet pe loc</small></div>
   <div class="sc"><b>Laborator</b><span>Tehnic propriu</span><small>Lucrări în timp record</small></div>
@@ -229,8 +301,8 @@ footer li{margin-bottom:9px}footer a:hover{color:var(--gold)}
 </div></div></section>
 
 <section id="about" class="sec"><div class="wrap">
-  <div class="head"><span class="rule"></span><h2>Circuit dentar complet. Laborator propriu.</h2><p>Eliminăm intermediarii. O singură clinică, o echipă sincronizată și toate specializările sub același acoperiș.</p></div>
-  <div class="steps">
+  <div class="head reveal"><span class="rule"></span><h2>Circuit dentar complet. Laborator propriu.</h2><p>Eliminăm intermediarii. O singură clinică, o echipă sincronizată și toate specializările sub același acoperiș.</p></div>
+  <div class="steps stagger">
     <div class="step"><span class="n">PASUL 1</span><h3>Diagnostic și plan</h3><p>Medicul și tehnicianul evaluează împreună cazul tău, stabilind forma și culoarea ideală direct în cabinet, fără drumuri suplimentare.</p></div>
     <div class="step"><span class="n">PASUL 2</span><h3>Execuție pe loc</h3><p>Fără curierat, fără timpi morți. Lucrarea ta este realizată în laboratorul nostru intern, cu tehnologie CAD/CAM de ultimă generație.</p></div>
     <div class="step"><span class="n">PASUL 3</span><h3>Zâmbetul final</h3><p>Ajustări fine făcute pe loc pentru o integrare estetică 100% naturală, o ocluzie perfectă și un pacient mulțumit.</p></div>
@@ -238,8 +310,8 @@ footer li{margin-bottom:9px}footer a:hover{color:var(--gold)}
 </div></section>
 
 <section id="services" class="sec"><div class="wrap">
-  <div class="head"><span class="rule"></span><h2>Serviciile noastre</h2><p>Tratamente complete pentru toată familia, cu cea mai avansată tehnologie.</p></div>
-  <div class="sgrid">
+  <div class="head reveal"><span class="rule"></span><h2>Serviciile noastre</h2><p>Tratamente complete pentru toată familia, cu cea mai avansată tehnologie.</p></div>
+  <div class="sgrid stagger">
     <div class="svc"><h3>Albire profesională</h3><p>Albire in-office cu rezultate vizibile într-o singură ședință.</p><div class="price">150 RON <small>/ ședință</small></div></div>
     <div class="svc"><h3>Implanturi dentare</h3><p>Înlocuire permanentă și estetică a dinților lipsă, cu implanturi din titan.</p><div class="price"><small style="margin:0 4px 0 0">de la</small>900 RON</div></div>
     <div class="svc"><h3>Ortodonție</h3><p>Aparate dentare și alignere invizibile pentru un zâmbet perfect aliniat.</p><div class="price"><small style="margin:0 4px 0 0">de la</small>1.200 RON</div></div>
@@ -250,8 +322,8 @@ footer li{margin-bottom:9px}footer a:hover{color:var(--gold)}
 </div></section>
 
 <section id="team" class="sec"><div class="wrap">
-  <div class="head"><span class="rule"></span><h2>Echipa medicală. Expertiză și pasiune.</h2><p>Suntem o echipă interdisciplinară unită de excelența medicală. Fiecare caz este analizat pentru soluții minim invazive și rezultate estetice durabile.</p></div>
-  <div class="tgrid">
+  <div class="head reveal"><span class="rule"></span><h2>Echipa medicală. Expertiză și pasiune.</h2><p>Suntem o echipă interdisciplinară unită de excelența medicală. Fiecare caz este analizat pentru soluții minim invazive și rezultate estetice durabile.</p></div>
+  <div class="tgrid stagger">
     <div class="doc"><div class="av">EP</div><b>Dr. Elena Popescu</b><span>Stomatologie generală</span></div>
     <div class="doc"><div class="av">AM</div><b>Dr. Andrei Mihai</b><span>Implantologie</span></div>
     <div class="doc"><div class="av">MI</div><b>Dr. Maria Ionescu</b><span>Ortodonție</span></div>
@@ -261,8 +333,8 @@ footer li{margin-bottom:9px}footer a:hover{color:var(--gold)}
 </div></section>
 
 <section id="testimonials" class="sec"><div class="wrap">
-  <div class="head"><span class="rule"></span><h2>Ce spun pacienții noștri</h2></div>
-  <div class="tgrid2">
+  <div class="head reveal"><span class="rule"></span><h2>Ce spun pacienții noștri</h2></div>
+  <div class="tgrid2 stagger">
     <div class="tc"><div class="stars">★★★★★</div><p>„Dr. Popescu mi-a transformat complet zâmbetul. Fațetele arată incredibil de natural și toată experiența a fost fără stres."</p><div><b>Andreea M.</b><small>Fațete ceramice</small></div></div>
     <div class="tc"><div class="stars">★★★★★</div><p>„Mă temeam de dentist, dar echipa m-a pus imediat la largul meu. Implantul a fost surprinzător de nedureros, iar rezultatul e perfect."</p><div><b>Radu C.</b><small>Implant dentar</small></div></div>
     <div class="tc"><div class="stars">★★★★★</div><p>„Copiii mei adoră să vină la cabinet. Dr. Popescu are un talent special de a-i face să se simtă confortabil. Recomand cu drag!"</p><div><b>Maria T.</b><small>Pacient de familie</small></div></div>
@@ -270,8 +342,8 @@ footer li{margin-bottom:9px}footer a:hover{color:var(--gold)}
 </div></section>
 
 <section id="faq" class="sec"><div class="wrap">
-  <div class="head"><span class="rule"></span><h2>Întrebări frecvente</h2><p>Răspunsuri rapide înainte de prima vizită.</p></div>
-  <div class="faq">
+  <div class="head reveal"><span class="rule"></span><h2>Întrebări frecvente</h2><p>Răspunsuri rapide înainte de prima vizită.</p></div>
+  <div class="faq reveal">
     <details><summary>Cum mă pot programa la Zenit Dental?</summary><p>Poți completa formularul de programare online, ne poți suna la +40 721 234 567 sau ne poți scrie pe WhatsApp. Te contactăm pentru a confirma ziua și ora.</p></details>
     <details><summary>Tratați și urgențele dentare?</summary><p>Da. Selectează „Urgență / durere" în formular sau sună-ne direct, iar echipa îți oferă prima oră disponibilă.</p></details>
     <details><summary>Radiografiile se fac în clinică?</summary><p>Da, avem radiologie digitală în clinică, așa că diagnosticul se stabilește în aceeași vizită, fără drumuri suplimentare.</p></details>
@@ -282,7 +354,7 @@ footer li{margin-bottom:9px}footer a:hover{color:var(--gold)}
 </div></section>
 
 <section id="contact" class="sec"><div class="wrap"><div class="cgrid">
-  <div>
+  <div class="reveal-left">
     <span class="rule"></span>
     <h2>Ia legătura cu noi</h2>
     <p class="cd">Suntem disponibili pentru consultații și urgențe. Programează-te astăzi pentru un zâmbet mai sănătos.</p>
@@ -291,7 +363,7 @@ footer li{margin-bottom:9px}footer a:hover{color:var(--gold)}
     <div class="ci"><div class="ic">✉️</div><div><small>Email</small><a href="mailto:contact@zenitdental.ro">contact@zenitdental.ro</a></div></div>
     <div class="ci"><div class="ic">🕐</div><div><small>Program</small>Luni–Vineri: 09:00–18:00<br>Sâmbătă: 10:00–14:00 · Duminică: închis</div></div>
   </div>
-  <form class="form" id="f">
+  <form class="form reveal-right" id="f">
     <h3>Programare online</h3>
     <div class="fr"><div class="fg"><label for="n">Nume pacient</label><input id="n" type="text" placeholder="Nume și prenume" required></div><div class="fg"><label for="t">Telefon</label><input id="t" type="tel" placeholder="07xx xxx xxx" required></div></div>
     <div class="fr"><div class="fg"><label for="e">Email</label><input id="e" type="email" placeholder="email@domeniu.ro"></div>
@@ -322,6 +394,68 @@ document.getElementById('bb').onclick=()=>dr.classList.add('open');
 document.getElementById('dc').onclick=close;
 dr.onclick=e=>{if(e.target===dr||e.target.tagName==='A')close()};
 document.getElementById('f').onsubmit=e=>{e.preventDefault();const b=e.target.querySelector('button');b.textContent='Solicitare trimisă. Te sunăm noi.';b.disabled=true};
+</script>
+<script>
+const dr = document.getElementById('dr');
+
+const close = () => dr.classList.remove('open');
+
+document.getElementById('bb').onclick = () => {
+    dr.classList.add('open');
+};
+
+document.getElementById('dc').onclick = close;
+
+dr.onclick = e => {
+    if (e.target === dr || e.target.tagName === 'A') {
+        close();
+    }
+};
+
+
+/* SCROLL REVEAL */
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add('visible');
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -50px 0px'
+});
+
+
+document.querySelectorAll(
+    '.reveal, .reveal-left, .reveal-right, .stagger'
+).forEach(el => {
+
+    revealObserver.observe(el);
+
+});
+
+
+/* FORM */
+
+document.getElementById('f').onsubmit = e => {
+
+    e.preventDefault();
+
+    const b = e.target.querySelector('button');
+
+    b.textContent = 'Solicitare trimisă. Te sunăm noi.';
+    b.disabled = true;
+
+};
 </script>
 </body>
 </html>
