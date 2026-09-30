@@ -63,6 +63,14 @@ h1,h2,h3{font-family:var(--fh);font-weight:600;line-height:1.1}
 
 /* HERO */
 #hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:130px 0 90px;overflow:hidden;color:#fff; background-image: url(zenit1.jpg);}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(100deg, rgba(1, 24, 41, .97) 38%, rgba(2, 36, 61, .45) 100%);
+}
+
+
 #hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;width:100%}
 .hero-mark{position:relative;justify-self:center;width:min(400px,80%);aspect-ratio:1}
 .hero-mark .mark{width:100%;height:100%;box-shadow:0 0 0 14px rgba(217,177,101,.08),0 0 0 15px rgba(217,177,101,.35),0 40px 90px rgba(0,0,0,.5);animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
@@ -192,7 +200,10 @@ footer li{margin-bottom:9px}footer a:hover{color:var(--gold)}
   <a href="tel:+40721234567" class="btn gold">Programare</a>
 </div></div>
 
-<section id="hero"><div class="wrap">
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="wrap">
   <div>
     <div class="eyebrow">Clinică stomatologică în București</div>
     <h1>De la diagnostic la <em>zâmbetul final</em>, fără drumuri inutile.</h1>
