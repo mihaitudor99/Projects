@@ -1,664 +1,283 @@
 <!DOCTYPE html>
 <html lang="ro">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DZR Clinics | Clinică stomatologică – Implanturi, Estetică dentară</title>
-    <meta name="description"
-        content="DZR Clinics – clinică stomatologică modernă: implanturi dentare, ortodonție, fațete, albire și tratamente pentru întreaga familie. Programează-te online.">
-    <link rel="canonical" href="https://dzrclinics.ro/">
-    <link rel="alternate" hreflang="ro" href="https://dzrclinics.ro/">
-    <link rel="alternate" hreflang="en" href="https://dzrclinics.ro/?lang=en">
-    <link rel="alternate" hreflang="x-default" href="https://dzrclinics.ro/">
-    <meta name="robots" content="index,follow">
-    <meta name="theme-color" content="#a58b68">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="DZR Clinics">
-    <meta property="og:title" content="DZR Clinics – Clinică stomatologică">
-    <meta property="og:description" content="Implanturi, estetică dentară și tratamente pentru întreaga familie.">
-    <meta property="og:url" content="https://dzrclinics.ro/">
-    <meta property="og:image" content="https://dzrclinics.ro/logoDZR.jpg">
-    <meta property="og:locale" content="ro_RO">
-    <link rel="icon" type="image/jpeg" href="faviconDZR.jpg">
-    <link rel="apple-touch-icon" href="faviconDZR.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Dentist",
-            "name": "DZR Clinics",
-            "url": "https://dzrclinics.ro/",
-            "logo": "https://dzrclinics.ro/logoDZR.jpg",
-            "image": "https://dzrclinics.ro/logoDZR.jpg",
-            "telephone": "+40 000 000 000",
-            "email": "contact@dzrclinics.ro",
-            "priceRange": "$$",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Strada Exemplu 1",
-                "addressLocality": "București",
-                "addressCountry": "RO"
-            },
-            "openingHours": ["Mo-Fr 09:00-19:00", "Sa 09:00-14:00"],
-            "medicalSpecialty": "Dentistry",
-            "availableLanguage": ["ro", "en"]
-        }
-    </script>
-    <style>
-        :root {
-            --gold: #a58b68;
-            --gold-d: #8a7254;
-            --gold-l: #efe6d8;
-            --ink: #3f3f3f;
-            --soft: #faf7f2
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zenit Dental — Clinică Stomatologică București</title>
+<meta name="description" content="Zenit Dental: clinică stomatologică modernă în București. Implanturi, ortodonție, estetică dentară.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#d9b165;--gold-d:#a98237;--navy:#07254a;--navy2:#041832;--card:#0d3260;--bg:#fff;--soft:#f6f4ef;--text:#14243b;--muted:#586a80;--line:rgba(7,37,74,.1);--nav:rgba(255,255,255,.94);--ink:#07254a;
+--fh:'Cormorant Garamond',Georgia,serif;--fs:'Montserrat',Arial,sans-serif;--fb:'Open Sans',Arial,sans-serif;--logo:url(data:image/webp;base64,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);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#061a33;--soft:#0a2444;--text:#eef1f6;--muted:#a6b4c7;--line:rgba(255,255,255,.1);--nav:rgba(6,26,51,.92);--ink:#f1e3c2}}
+:root[data-theme="dark"]{--bg:#061a33;--soft:#0a2444;--text:#eef1f6;--muted:#a6b4c7;--line:rgba(255,255,255,.1);--nav:rgba(6,26,51,.92);--ink:#f1e3c2}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(90px + env(safe-area-inset-top,0px));overflow-x:hidden}
+body{font-family:var(--fb);color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}ul{list-style:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.mark{background:var(--logo) center/cover no-repeat;border-radius:50%;flex-shrink:0}
+h1,h2,h3{font-family:var(--fh);font-weight:600;line-height:1.1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;border-radius:50px;cursor:pointer;font:700 11px var(--fs);letter-spacing:1.2px;text-transform:uppercase;padding:14px 28px;transition:.25s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.gold{background:var(--gold);color:var(--navy2)}.gold:hover{background:#ecc885}
+.ghost{color:#fff;border-color:rgba(255,255,255,.4)}.ghost:hover{border-color:var(--gold);color:var(--gold)}
+.sec{padding:100px 0}
+.head{max-width:680px;margin-bottom:56px}
+.head h2{font-size:clamp(2.2rem,4vw,3.3rem);color:var(--ink);margin-bottom:14px}
+.head p{color:var(--muted);font-size:16px}
+.rule{display:block;width:48px;height:2px;background:var(--gold);margin-bottom:18px}
 
-        html {
-            scroll-behavior: smooth
-        }
+/* NAV */
+#nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:0;right:0;z-index:900}
+.pill{display:flex;align-items:center;gap:8px;background:var(--nav);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:50px;padding:7px 8px 7px 10px;box-shadow:0 8px 30px rgba(4,24,50,.14)}
+.brand{display:flex;align-items:center;gap:11px;margin-right:6px}
+.brand .mark{width:42px;height:42px}
+.brand b{display:block;font:600 19px/1 var(--fs);letter-spacing:5px;color:var(--ink)}
+.brand i{display:block;font:500 12px/1 var(--fs);letter-spacing:6px;color:var(--gold-d);margin-top:3px;font-style:normal;text-transform:lowercase}
+.links{display:flex;flex:1;justify-content:center;gap:2px}
+.links a{padding:8px 14px;font:600 11px var(--fs);letter-spacing:.6px;color:var(--muted);border-radius:50px;transition:.2s}
+.links a:hover{color:var(--ink);background:var(--line)}
+.burger{display:none;margin-left:auto;background:none;border:0;cursor:pointer;color:var(--gold-d);padding:8px}
+.burger svg,.dclose svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.drawer{display:none;position:fixed;inset:0;z-index:950;background:rgba(4,24,50,.65)}
+.drawer.open{display:block}
+.dbox{position:absolute;top:0;right:0;bottom:0;width:min(320px,85vw);background:var(--bg);padding:84px 26px 26px;display:flex;flex-direction:column;gap:6px}
+.dbox a:not(.btn){padding:14px 16px;font:700 15px var(--fs);border-radius:10px}
+.dbox a:not(.btn):hover{background:var(--soft);color:var(--gold-d)}
+.dbox .btn{margin-top:14px}
+.dclose{position:absolute;top:22px;right:20px;background:none;border:0;color:var(--muted);cursor:pointer}
 
-        body {
-            font-family: Inter, system-ui, sans-serif;
-            font-weight: 300;
-            color: var(--ink);
-            background: #fff;
-            line-height: 1.7
-        }
+/* HERO */
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:130px 0 90px;overflow:hidden;background:radial-gradient(ellipse at 78% 45%,#0f3f78 0%,var(--navy) 45%,var(--navy2) 100%);color:#fff}
+#hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;width:100%}
+.hero-mark{position:relative;justify-self:center;width:min(400px,80%);aspect-ratio:1}
+.hero-mark .mark{width:100%;height:100%;box-shadow:0 0 0 14px rgba(217,177,101,.08),0 0 0 15px rgba(217,177,101,.35),0 40px 90px rgba(0,0,0,.5);animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:scale(.92) translateY(16px)}}
+.eyebrow{font:600 12px var(--fs);letter-spacing:1px;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:32px;height:1px;background:var(--gold)}
+.hero h1,#hero h1{font-size:clamp(2.8rem,5.6vw,5rem);font-weight:600;margin-bottom:24px}
+#hero h1 em{font-style:italic;color:var(--gold);font-weight:500}
+.sub{color:rgba(255,255,255,.82);font-size:17px;max-width:480px;margin-bottom:34px;padding-left:18px;border-left:2px solid var(--gold)}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:46px}
+.hstats{display:flex;gap:40px;flex-wrap:wrap;padding-top:26px;border-top:1px solid rgba(255,255,255,.14)}
+.hstats b{display:block;font:600 2.4rem/1 var(--fh);color:var(--gold)}
+.hstats span{font:600 11px var(--fs);letter-spacing:.6px;color:#a9bad0}
 
-        h1,
-        h2,
-        h3,
-        h4,
-        .h5 {
-            font-family: "Cormorant Garamond", Georgia, serif;
-            font-weight: 600;
-            letter-spacing: .01em;
-            color: #2f2f2f
-        }
+/* STATS */
+#stats{background:var(--soft);padding:34px 0}
+.srow{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.sc{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px 18px;border-top:3px solid var(--gold)}
+.sc b{display:block;font:600 1.5rem/1.1 var(--fh);color:var(--ink)}
+.sc span{display:block;font:700 11px var(--fs);color:var(--gold-d);margin:4px 0 2px}
+.sc small{font-size:12px;color:var(--muted)}
 
-        h2 {
-            font-size: 2.6rem
-        }
+/* ABOUT */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.step{padding:36px 32px 12px 0}
+.step+.step{padding-left:32px;border-left:1px solid var(--line)}
+.step h3{font-size:1.8rem;color:var(--ink);margin-bottom:10px}
+.step p{color:var(--muted);font-size:14.5px}
+.step .n{font:700 11px var(--fs);color:var(--gold-d);letter-spacing:1px;display:block;margin-bottom:14px}
 
-        .h5 {
-            font-size: 1.6rem
-        }
+/* SERVICES */
+#services{background:var(--navy2);color:#fff}
+#services .head h2{color:#fff}#services .head p{color:#a9bad0}
+.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden}
+.svc{background:var(--navy2);padding:34px 28px;transition:background .25s;box-shadow:inset 0 -2px 0 transparent}
+.svc:hover{background:var(--card);box-shadow:inset 0 -2px 0 var(--gold)}
+.svc h3{font-size:1.6rem;margin-bottom:8px;color:#fff}
+.svc p{font-size:13.5px;color:#a9bad0;margin-bottom:18px}
+.price{font:600 1.7rem var(--fh);color:var(--gold)}
+.price small{font:400 12px var(--fb);color:#a9bad0;margin-left:4px}
 
-        .navbar {
-            background: rgba(255, 255, 255, .92);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--gold-l);
-            transition: box-shadow .3s
-        }
+/* TEAM */
+.tgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.doc{text-align:center}
+.av{aspect-ratio:3/4;border-radius:14px;background:linear-gradient(160deg,var(--card),var(--navy2));display:flex;align-items:center;justify-content:center;font:600 3.2rem var(--fh);color:var(--gold);border:1px solid rgba(217,177,101,.35);margin-bottom:14px;transition:transform .25s}
+.doc:hover .av{transform:translateY(-6px)}
+.doc b{display:block;font:700 14px var(--fs);color:var(--ink)}
+.doc span{font-size:12.5px;color:var(--gold-d);font-weight:600}
 
-        .navbar.scrolled {
-            box-shadow: 0 4px 24px rgba(0, 0, 0, .07)
-        }
+/* TESTIMONIALS */
+#testimonials{background:var(--soft)}
+.tgrid2{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tc{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;gap:16px}
+.stars{color:var(--gold);letter-spacing:3px}
+.tc p{font:500 1.25rem/1.45 var(--fh);color:var(--text);flex:1}
+.tc b{display:block;font:700 13px var(--fs);color:var(--ink)}
+.tc small{color:var(--muted);font-size:12px}
 
-        .navbar img {
-            height: 54px;
-            width: auto
-        }
+/* CONTACT */
+#contact{background:var(--navy);color:#fff}
+.cgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:start}
+#contact h2{font-size:clamp(2.4rem,4vw,3.4rem);margin-bottom:14px}
+.cd{color:#b8c6d8;margin-bottom:34px}
+.ci{display:flex;gap:16px;margin-bottom:22px}
+.ci .ic{width:44px;height:44px;border:1px solid rgba(217,177,101,.4);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ci small{display:block;font:700 11px var(--fs);color:var(--gold);letter-spacing:.5px}
+.ci a:hover{color:var(--gold)}
+.form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:38px}
+.form h3{font-size:2rem;margin-bottom:22px}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fr.one{grid-template-columns:1fr}
+.fg label{display:block;font:600 11px var(--fs);color:#b8c6d8;margin-bottom:6px}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:13px 14px;color:#fff;font:14px var(--fb)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
+.fg option{color:#111}.fg textarea{min-height:90px;resize:vertical}
+.form .btn{width:100%;margin-top:10px}
+.gdpr{font-size:11px;color:#8fa2ba;text-align:center;margin-top:12px}
 
-        .nav-link {
-            color: var(--ink) !important;
-            font-weight: 400;
-            font-size: .95rem;
-            letter-spacing: .04em
-        }
+/* FOOTER */
+footer{background:var(--navy2);border-top:2px solid var(--gold);padding:68px 0 26px;color:#a9bad0;font-size:13px}
+.fg4{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:48px}
+.fbrand{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.fbrand .mark{width:60px;height:60px}
+.fbrand b{display:block;font:600 22px/1 var(--fs);letter-spacing:6px;color:#fff}
+.fbrand i{display:block;font:500 13px/1 var(--fs);letter-spacing:7px;color:var(--gold);margin-top:5px;font-style:normal}
+footer h4{font:700 12px var(--fs);letter-spacing:1px;color:#fff;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(217,177,101,.4);display:inline-block}
+footer li{margin-bottom:9px}footer a:hover{color:var(--gold)}
+.sr{display:flex;justify-content:space-between;gap:14px;margin-bottom:6px}.sr b{color:#fff;font-weight:600}
+.fb{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px}
+.fb a{margin-left:18px}
 
-        .nav-link:hover {
-            color: var(--gold) !important
-        }
+.sticky{display:none;position:fixed;left:0;right:0;bottom:0;z-index:800;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));gap:10px}
+.sticky a{flex:1;text-align:center;padding:14px;border-radius:50px;font:800 11px var(--fs);letter-spacing:1px;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.sticky .c{background:var(--navy);color:#fff}.sticky .w{background:#25d366;color:#fff}
 
-        .btn {
-            border-radius: 50px;
-            letter-spacing: .06em;
-            font-weight: 500;
-            padding: .6rem 1.6rem;
-            transition: all .3s
-        }
-
-        .btn-gold {
-            background: linear-gradient(135deg, #b89e7a, var(--gold-d));
-            border: 0;
-            color: #fff;
-            box-shadow: 0 6px 18px rgba(165, 139, 104, .35)
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            color: #fff;
-            box-shadow: 0 10px 24px rgba(165, 139, 104, .45)
-        }
-
-        .btn-outline-gold {
-            border: 1px solid var(--gold);
-            color: var(--gold-d)
-        }
-
-        .btn-outline-gold:hover {
-            background: var(--gold);
-            color: #fff
-        }
-
-        .lang button {
-            border: 0;
-            background: none;
-            color: #999;
-            font-weight: 500;
-            padding: .2rem .4rem
-        }
-
-        .lang button.active {
-            color: var(--gold-d);
-            border-bottom: 2px solid var(--gold)
-        }
-
-        .hero {
-            padding: 5rem 0 7rem;
-            background: radial-gradient(circle at 85% 20%, var(--gold-l) 0, transparent 45%), radial-gradient(circle at 0 100%, #f6efe4 0, transparent 40%), #fff;
-            position: relative;
-            overflow: hidden
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            left: -10%;
-            right: -10%;
-            top: 52%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            opacity: .35
-        }
-
-        .eyebrow {
-            color: var(--gold-d);
-            text-transform: uppercase;
-            letter-spacing: .3em;
-            font-size: .78rem;
-            font-weight: 500
-        }
-
-        .hero h1 {
-            font-size: clamp(2.6rem, 5.5vw, 4.4rem);
-            line-height: 1.08;
-            margin: .5rem 0 1.2rem
-        }
-
-        .hero .lead {
-            font-weight: 300;
-            max-width: 520px;
-            margin-bottom: 2rem
-        }
-
-        .logo-card {
-            background: #fff;
-            border-radius: 50%;
-            max-width: 380px;
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            box-shadow: 0 30px 70px rgba(165, 139, 104, .25);
-            border: 1px solid var(--gold-l);
-            outline: 14px solid rgba(255, 255, 255, .6);
-            animation: fl 6s ease-in-out infinite
-        }
-
-        .logo-card img {
-            width: 100%;
-            border-radius: 50%
-        }
-
-        @keyframes fl {
-            50% {
-                transform: translateY(-12px)
-            }
-        }
-
-        .stats {
-            margin-top: -3.5rem;
-            position: relative;
-            z-index: 2
-        }
-
-        .stats .box {
-            background: #fff;
-            border-radius: 1.2rem;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, .08)
-        }
-
-        .num {
-            font-family: "Cormorant Garamond", serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: var(--gold-d);
-            line-height: 1
-        }
-
-        .stats .col-4+.col-4 {
-            border-left: 1px solid var(--gold-l)
-        }
-
-        section {
-            padding: 6rem 0
-        }
-
-        .alt {
-            background: var(--soft)
-        }
-
-        .divider {
-            width: 70px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--gold), transparent);
-            margin: 1rem auto 3rem
-        }
-
-        .card {
-            border: 1px solid var(--gold-l);
-            border-radius: 1.2rem;
-            box-shadow: none;
-            height: 100%;
-            transition: all .35s;
-            background: #fff
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 22px 44px rgba(165, 139, 104, .2);
-            border-color: var(--gold)
-        }
-
-        .ico {
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: var(--gold-l);
-            color: var(--gold-d);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.2rem;
-            transition: .35s
-        }
-
-        .card:hover .ico {
-            background: var(--gold);
-            color: #fff
-        }
-
-        .why .ico {
-            margin: 0 auto 1.2rem;
-            width: 70px;
-            height: 70px;
-            font-size: 1.8rem
-        }
-
-        .form-panel {
-            background: #fff;
-            border-radius: 1.4rem;
-            padding: 2.5rem;
-            box-shadow: 0 25px 60px rgba(0, 0, 0, .08)
-        }
-
-        .form-control {
-            border-radius: .8rem;
-            border: 1px solid #e5ddd0;
-            padding: .8rem 1rem;
-            background: var(--soft)
-        }
-
-        .form-control:focus {
-            border-color: var(--gold);
-            box-shadow: 0 0 0 .2rem rgba(165, 139, 104, .2);
-            background: #fff
-        }
-
-        .info i {
-            color: var(--gold);
-            margin-right: .6rem
-        }
-
-        .info a {
-            color: var(--ink);
-            text-decoration: none
-        }
-
-        .info a:hover {
-            color: var(--gold-d)
-        }
-
-        footer {
-            background: #2f2f2f;
-            color: #bbb;
-            padding: 2.5rem 0;
-            font-size: .9rem
-        }
-
-        footer a {
-            color: #fff;
-            text-decoration: none
-        }
-
-        .sticky-call {
-            position: fixed;
-            right: 1rem;
-            bottom: 1rem;
-            z-index: 99
-        }
-
-        .js .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity .8s, transform .8s
-        }
-
-        .js .reveal.in {
-            opacity: 1;
-            transform: none
-        }
-
-        @media(prefers-reduced-motion:reduce) {
-            .logo-card {
-                animation: none
-            }
-
-            .js .reveal {
-                opacity: 1;
-                transform: none
-            }
-        }
-    </style>
+@media(max-width:1100px){.wrap{padding:0 28px}.sgrid{grid-template-columns:repeat(2,1fr)}.tgrid{grid-template-columns:repeat(3,1fr)}.srow{grid-template-columns:repeat(3,1fr)}.fg4{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.wrap{padding:0 20px}.links,.pill>.btn{display:none}.burger{display:block}
+#hero .wrap{grid-template-columns:1fr}.hero-mark{order:-1;width:150px;justify-self:start}.hero-mark .mark{box-shadow:0 0 0 6px rgba(217,177,101,.12),0 20px 50px rgba(0,0,0,.5)}
+.sec{padding:72px 0}.steps{grid-template-columns:1fr}.step,.step+.step{padding:28px 0;border-left:0;border-bottom:1px solid var(--line)}
+.sgrid,.tgrid2,.cgrid,.fg4{grid-template-columns:1fr}.cgrid{gap:44px}.tgrid{grid-template-columns:repeat(2,1fr)}.srow{grid-template-columns:repeat(2,1fr)}
+.sticky{display:flex}body{padding-bottom:72px}.fb{flex-direction:column;text-align:center}.fb a{margin:0 8px}}
+@media(max-width:600px){.acts{flex-direction:column}.acts .btn{width:100%}.fr{grid-template-columns:1fr}.form{padding:26px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#top"><img src="logoDZR.jpg" alt="DZR Clinics – logo"></a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Menu"><span
-                    class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="nav">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="#services" data-i18n="n1">Servicii</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#why" data-i18n="n2">De ce DZR</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="n3">Contact</a></li>
-                    <li class="nav-item lang mx-lg-3"><button data-l="ro" class="active">RO</button>|<button
-                            data-l="en">EN</button></li>
-                    <li class="nav-item"><a class="btn btn-gold" href="#contact" data-i18n="cta">Programează-te</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <main id="top">
-        <header class="hero">
-            <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-7 text-center text-lg-start">
-                        <p class="eyebrow" data-i18n="tag">Clinică stomatologică</p>
-                        <h1 data-i18n="h1">Zâmbetul tău, la cel mai înalt standard</h1>
-                        <p class="lead" data-i18n="sub">Tehnologie modernă, echipă dedicată și tratamente personalizate
-                            pentru întreaga familie.</p>
-                        <a href="#contact" class="btn btn-gold btn-lg me-2 mb-2" data-i18n="cta">Programează-te</a>
-                        <a href="#services" class="btn btn-outline-gold btn-lg mb-2" data-i18n="more">Vezi
-                            serviciile</a>
-                    </div>
-                    <div class="col-lg-5">
-                        <div class="logo-card mx-auto"><img src="logoDZR.jpg" alt="DZR Clinics – clinică stomatologică">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <div class="container stats">
-            <div class="box row g-0 text-center">
-                <div class="col-4 p-3 p-md-4">
-                    <div class="num">15+</div>
-                    <div class="small" data-i18n="a1">ani de experiență</div>
-                </div>
-                <div class="col-4 p-3 p-md-4">
-                    <div class="num">5000+</div>
-                    <div class="small" data-i18n="a2">pacienți mulțumiți</div>
-                </div>
-                <div class="col-4 p-3 p-md-4">
-                    <div class="num">100%</div>
-                    <div class="small" data-i18n="a3">costuri transparente</div>
-                </div>
-            </div>
-        </div>
+<nav id="nav"><div class="wrap"><div class="pill">
+  <a href="#" class="brand" aria-label="Zenit Dental"><span class="mark" style="width:42px;height:42px"></span><span><b>ZENIT</b><i>dental</i></span></a>
+  <ul class="links"><li><a href="#about">Despre</a></li><li><a href="#services">Servicii</a></li><li><a href="#team">Echipă</a></li><li><a href="#testimonials">Recenzii</a></li><li><a href="#contact">Contact</a></li></ul>
+  <a href="tel:+40721234567" class="btn gold">Programare</a>
+  <button class="burger" id="bb" aria-label="Meniu"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div></div></nav>
 
-        <section id="services" class="alt">
-            <div class="container text-center">
-                <h2 data-i18n="st">Serviciile noastre</h2>
-                <div class="divider"></div>
-                <div class="row g-4 text-start">
-                    <div class="col-md-6 col-lg-4">
-                        <article class="card p-4 reveal">
-                            <div class="ico"><i class="bi bi-gem"></i></div>
-                            <h3 class="h5" data-i18n="s1t">Implanturi dentare</h3>
-                            <p class="mb-0" data-i18n="s1d">Soluții fixe, durabile, planificate digital.</p>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <article class="card p-4 reveal">
-                            <div class="ico"><i class="bi bi-stars"></i></div>
-                            <h3 class="h5" data-i18n="s2t">Estetică dentară</h3>
-                            <p class="mb-0" data-i18n="s2d">Fațete, coroane și design de zâmbet.</p>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <article class="card p-4 reveal">
-                            <div class="ico"><i class="bi bi-emoji-smile"></i></div>
-                            <h3 class="h5" data-i18n="s3t">Ortodonție</h3>
-                            <p class="mb-0" data-i18n="s3d">Aparate dentare clasice și alignere transparente.</p>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <article class="card p-4 reveal">
-                            <div class="ico"><i class="bi bi-brightness-high"></i></div>
-                            <h3 class="h5" data-i18n="s4t">Albire dentară</h3>
-                            <p class="mb-0" data-i18n="s4d">Rezultate vizibile, în siguranță, într-o singură ședință.
-                            </p>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <article class="card p-4 reveal">
-                            <div class="ico"><i class="bi bi-heart-pulse"></i></div>
-                            <h3 class="h5" data-i18n="s5t">Stomatologie generală</h3>
-                            <p class="mb-0" data-i18n="s5d">Consultații, detartraj, tratamente de canal și obturații.
-                            </p>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <article class="card p-4 reveal">
-                            <div class="ico"><i class="bi bi-balloon-heart"></i></div>
-                            <h3 class="h5" data-i18n="s6t">Pedodonție</h3>
-                            <p class="mb-0" data-i18n="s6d">Îngrijire blândă pentru cei mici, fără stres.</p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
+<div class="drawer" id="dr"><div class="dbox">
+  <button class="dclose" id="dc" aria-label="Închide"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <a href="#about">Despre</a><a href="#services">Servicii</a><a href="#team">Echipă</a><a href="#testimonials">Recenzii</a><a href="#contact">Contact</a>
+  <a href="tel:+40721234567" class="btn gold">Programare</a>
+</div></div>
 
-        <section id="why" class="why">
-            <div class="container text-center">
-                <h2 data-i18n="wt">De ce DZR Clinics</h2>
-                <div class="divider"></div>
-                <div class="row g-4">
-                    <div class="col-md-4 reveal">
-                        <div class="ico"><i class="bi bi-cpu"></i></div>
-                        <h3 class="h5" data-i18n="w1t">Tehnologie modernă</h3>
-                        <p data-i18n="w1d">Radiologie digitală și planificare 3D pentru precizie maximă.</p>
-                    </div>
-                    <div class="col-md-4 reveal">
-                        <div class="ico"><i class="bi bi-clipboard2-check"></i></div>
-                        <h3 class="h5" data-i18n="w2t">Plan personalizat</h3>
-                        <p data-i18n="w2d">Fiecare tratament este explicat clar, cu costuri transparente.</p>
-                    </div>
-                    <div class="col-md-4 reveal">
-                        <div class="ico"><i class="bi bi-shield-heart"></i></div>
-                        <h3 class="h5" data-i18n="w3t">Confort și încredere</h3>
-                        <p data-i18n="w3d">Un mediu relaxant și o echipă care te ascultă.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="hero"><div class="wrap">
+  <div>
+    <div class="eyebrow">Clinică stomatologică în București</div>
+    <h1>De la diagnostic la <em>zâmbetul final</em>, fără drumuri inutile.</h1>
+    <p class="sub">O singură clinică, o echipă dedicată și toate specializările sub același acoperiș. Bine ai venit la Zenit Dental.</p>
+    <div class="acts"><a href="#contact" class="btn gold">Programează-te online</a><a href="#about" class="btn ghost">Descoperă mai mult</a></div>
+    <div class="hstats">
+      <div><b>15+</b><span>Ani de experiență</span></div>
+      <div><b>3.000+</b><span>Pacienți mulțumiți</span></div>
+      <div><b>98%</b><span>Satisfacție</span></div>
+    </div>
+  </div>
+  <div class="hero-mark"><div class="mark" role="img" aria-label="Sigla Zenit Dental"></div></div>
+</div></section>
 
-        <section id="contact" class="alt">
-            <div class="container">
-                <div class="row g-5">
-                    <div class="col-lg-5 info">
-                        <h2 data-i18n="ct">Programează o consultație</h2>
-                        <div class="divider ms-0"></div>
-                        <p data-i18n="cd">Scrie-ne și te contactăm în cel mai scurt timp.</p>
-                        <p class="mb-1"><i class="bi bi-telephone"></i><strong data-i18n="ph">Telefon:</strong> <a
-                                href="tel:+40000000000">+40 000 000 000</a></p>
-                        <p class="mb-1"><i class="bi bi-envelope"></i><strong>Email:</strong> <a
-                                href="mailto:contact@dzrclinics.ro">contact@dzrclinics.ro</a></p>
-                        <p class="mb-1"><i class="bi bi-geo-alt"></i><strong data-i18n="ad">Adresă:</strong> Strada
-                            Exemplu 1, București</p>
-                        <p><i class="bi bi-clock"></i><strong data-i18n="hr">Program:</strong> <span
-                                data-i18n="hv">Luni–Vineri 09–19, Sâmbătă 09–14</span></p>
-                    </div>
-                    <div class="col-lg-7">
-                        <!-- TODO: point action to your backend / Formspree / mail script -->
-                        <form action="#" method="post" class="row g-3 form-panel">
-                            <div class="col-md-6"><input class="form-control" name="name" required data-i18n-ph="fn"
-                                    placeholder="Nume" aria-label="Name"></div>
-                            <div class="col-md-6"><input class="form-control" name="phone" type="tel" required
-                                    data-i18n-ph="fp" placeholder="Telefon" aria-label="Phone"></div>
-                            <div class="col-12"><textarea class="form-control" name="msg" rows="4" data-i18n-ph="fm"
-                                    placeholder="Cum te putem ajuta?" aria-label="Message"></textarea></div>
-                            <div class="col-12 form-check ms-2"><input type="checkbox" class="form-check-input"
-                                    id="gdpr" required><label for="gdpr" class="form-check-label small"
-                                    data-i18n="gd">Sunt de acord cu prelucrarea datelor personale (GDPR).</label></div>
-                            <div class="col-12"><button class="btn btn-gold btn-lg" data-i18n="send">Trimite</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+<section id="stats"><div class="wrap"><div class="srow">
+  <div class="sc"><b>18+ medici</b><span>Specialiști de top</span><small>Toate domeniile acoperite</small></div>
+  <div class="sc"><b>Radiologie</b><span>Digitală, in-house</span><small>Diagnostic complet pe loc</small></div>
+  <div class="sc"><b>Laborator</b><span>Tehnic propriu</span><small>Lucrări în timp record</small></div>
+  <div class="sc"><b>10 cabinete</b><span>Ultra-moderne</span><small>Fără timp de așteptare</small></div>
+  <div class="sc"><b>10.000+</b><span>Zâmbete reușite</span><small>Te așteptăm și pe tine</small></div>
+</div></div></section>
 
-    <a href="tel:+40000000000" class="btn btn-gold rounded-pill shadow sticky-call d-lg-none" data-i18n="call">Sună
-        acum</a>
+<section id="about" class="sec"><div class="wrap">
+  <div class="head"><span class="rule"></span><h2>Circuit dentar complet. Laborator propriu.</h2><p>Eliminăm intermediarii. O singură clinică, o echipă sincronizată și toate specializările sub același acoperiș.</p></div>
+  <div class="steps">
+    <div class="step"><span class="n">PASUL 1</span><h3>Diagnostic și plan</h3><p>Medicul și tehnicianul evaluează împreună cazul tău, stabilind forma și culoarea ideală direct în cabinet, fără drumuri suplimentare.</p></div>
+    <div class="step"><span class="n">PASUL 2</span><h3>Execuție pe loc</h3><p>Fără curierat, fără timpi morți. Lucrarea ta este realizată în laboratorul nostru intern, cu tehnologie CAD/CAM de ultimă generație.</p></div>
+    <div class="step"><span class="n">PASUL 3</span><h3>Zâmbetul final</h3><p>Ajustări fine făcute pe loc pentru o integrare estetică 100% naturală, o ocluzie perfectă și un pacient mulțumit.</p></div>
+  </div>
+</div></section>
 
-    <footer>
-        <div class="container d-flex flex-wrap justify-content-between gap-2">
-            <span>© <span id="y"></span> DZR Clinics · dzrclinics.ro</span>
-            <span><a href="#" data-i18n="pv">Politica de confidențialitate</a> · <a href="#" data-i18n="tm">Termeni</a>
-                · <a href="https://anpc.ro" rel="noopener">ANPC</a></span>
-        </div>
-    </footer>
+<section id="services" class="sec"><div class="wrap">
+  <div class="head"><span class="rule"></span><h2>Serviciile noastre</h2><p>Tratamente complete pentru toată familia, cu cea mai avansată tehnologie.</p></div>
+  <div class="sgrid">
+    <div class="svc"><h3>Albire profesională</h3><p>Albire in-office cu rezultate vizibile într-o singură ședință.</p><div class="price">150 RON <small>/ ședință</small></div></div>
+    <div class="svc"><h3>Implanturi dentare</h3><p>Înlocuire permanentă și estetică a dinților lipsă, cu implanturi din titan.</p><div class="price"><small style="margin:0 4px 0 0">de la</small>900 RON</div></div>
+    <div class="svc"><h3>Ortodonție</h3><p>Aparate dentare și alignere invizibile pentru un zâmbet perfect aliniat.</p><div class="price"><small style="margin:0 4px 0 0">de la</small>1.200 RON</div></div>
+    <div class="svc"><h3>Endodonție</h3><p>Tratament de canal fără durere, cu tehnologie microscopică avansată.</p><div class="price">400 RON</div></div>
+    <div class="svc"><h3>Igienizare și detartraj</h3><p>Curățare profesională cu ultrasunete și airflow pentru o dantură sănătoasă.</p><div class="price">60 RON</div></div>
+    <div class="svc"><h3>Fațete ceramice</h3><p>Fațete ultra-subțiri din porțelan pentru transformarea completă a zâmbetului.</p><div class="price"><small style="margin:0 4px 0 0">de la</small>350 RON</div></div>
+  </div>
+</div></section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Future: <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
-    <script>
-        document.documentElement.classList.add("js");
-        const T = {
-            en: {
-                n1: "Services",
-                n2: "Why DZR",
-                n3: "Contact",
-                cta: "Book an appointment",
-                tag: "Dental clinic",
-                h1: "Your smile, at the highest standard",
-                sub: "Modern technology, a dedicated team and personalised treatments for the whole family.",
-                more: "View services",
-                st: "Our services",
-                s1t: "Dental implants",
-                s1d: "Fixed, long-lasting solutions planned digitally.",
-                s2t: "Cosmetic dentistry",
-                s2d: "Veneers, crowns and smile design.",
-                s3t: "Orthodontics",
-                s3d: "Traditional braces and clear aligners.",
-                s4t: "Teeth whitening",
-                s4d: "Visible results, safely, in a single session.",
-                s5t: "General dentistry",
-                s5d: "Check-ups, scaling, root canals and fillings.",
-                s6t: "Paediatric dentistry",
-                s6d: "Gentle, stress-free care for little ones.",
-                wt: "Why DZR Clinics",
-                w1t: "Modern technology",
-                w1d: "Digital radiology and 3D planning for maximum precision.",
-                w2t: "Personalised plan",
-                w2d: "Every treatment clearly explained, with transparent costs.",
-                w3t: "Comfort and trust",
-                w3d: "A relaxing environment and a team that listens.",
-                ct: "Book a consultation",
-                cd: "Write to us and we'll get back to you shortly.",
-                ph: "Phone:",
-                ad: "Address:",
-                hr: "Hours:",
-                hv: "Mon–Fri 09–19, Sat 09–14",
-                fn: "Name",
-                fp: "Phone",
-                fm: "How can we help?",
-                gd: "I agree to the processing of my personal data (GDPR).",
-                send: "Send",
-                call: "Call now",
-                pv: "Privacy policy",
-                tm: "Terms",
-                a1: "years of experience",
-                a2: "happy patients",
-                a3: "transparent pricing",
-                _t: "DZR Clinics | Dental clinic – Implants, Cosmetic Dentistry",
-                _d: "DZR Clinics – modern dental clinic: implants, orthodontics, veneers, whitening and family care. Book online."
-            }
-        };
-        const RO = {};
-        document.querySelectorAll("[data-i18n]").forEach(e => RO[e.dataset.i18n] = e.textContent);
-        document.querySelectorAll("[data-i18n-ph]").forEach(e => RO[e.dataset.i18nPh] = e.placeholder);
-        RO._t = document.title;
-        RO._d = document.querySelector('meta[name=description]').content;
-        T.ro = RO;
+<section id="team" class="sec"><div class="wrap">
+  <div class="head"><span class="rule"></span><h2>Echipa medicală. Expertiză și pasiune.</h2><p>Suntem o echipă interdisciplinară unită de excelența medicală. Fiecare caz este analizat pentru soluții minim invazive și rezultate estetice durabile.</p></div>
+  <div class="tgrid">
+    <div class="doc"><div class="av">EP</div><b>Dr. Elena Popescu</b><span>Stomatologie generală</span></div>
+    <div class="doc"><div class="av">AM</div><b>Dr. Andrei Mihai</b><span>Implantologie</span></div>
+    <div class="doc"><div class="av">MI</div><b>Dr. Maria Ionescu</b><span>Ortodonție</span></div>
+    <div class="doc"><div class="av">RC</div><b>Dr. Radu Constantin</b><span>Chirurgie orală</span></div>
+    <div class="doc"><div class="av">AP</div><b>Dr. Ana Popa</b><span>Parodontologie</span></div>
+  </div>
+</div></section>
 
-        function setLang(l) {
-            const d = T[l] || RO;
-            document.querySelectorAll("[data-i18n]").forEach(e => e.textContent = d[e.dataset.i18n]);
-            document.querySelectorAll("[data-i18n-ph]").forEach(e => e.placeholder = d[e.dataset.i18nPh]);
-            document.documentElement.lang = l;
-            document.title = d._t;
-            document.querySelector('meta[name=description]').content = d._d;
-            document.querySelector('meta[property="og:locale"]').content = l == "ro" ? "ro_RO" : "en_US";
-            document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("active", b.dataset.l == l));
-            try {
-                localStorage.setItem("lang", l)
-            } catch (e) {}
-        }
-        document.querySelectorAll(".lang button").forEach(b => b.onclick = () => setLang(b.dataset.l));
-        let q = new URLSearchParams(location.search).get("lang"),
-            s;
-        try {
-            s = localStorage.getItem("lang")
-        } catch (e) {}
-        setLang(q || s || "ro");
-        document.getElementById("y").textContent = new Date().getFullYear();
-        const nb = document.querySelector(".navbar");
-        addEventListener("scroll", () => nb.classList.toggle("scrolled", scrollY > 10));
-        const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.classList.add("in");
-                io.unobserve(e.target)
-            }
-        }), {
-            threshold: .15
-        }) : null;
-        document.querySelectorAll(".reveal").forEach(e => io ? io.observe(e) : e.classList.add("in"));
-    </script>
+<section id="testimonials" class="sec"><div class="wrap">
+  <div class="head"><span class="rule"></span><h2>Ce spun pacienții noștri</h2></div>
+  <div class="tgrid2">
+    <div class="tc"><div class="stars">★★★★★</div><p>„Dr. Popescu mi-a transformat complet zâmbetul. Fațetele arată incredibil de natural și toată experiența a fost fără stres."</p><div><b>Andreea M.</b><small>Fațete ceramice</small></div></div>
+    <div class="tc"><div class="stars">★★★★★</div><p>„Mă temeam de dentist, dar echipa m-a pus imediat la largul meu. Implantul a fost surprinzător de nedureros, iar rezultatul e perfect."</p><div><b>Radu C.</b><small>Implant dentar</small></div></div>
+    <div class="tc"><div class="stars">★★★★★</div><p>„Copiii mei adoră să vină la cabinet. Dr. Popescu are un talent special de a-i face să se simtă confortabil. Recomand cu drag!"</p><div><b>Maria T.</b><small>Pacient de familie</small></div></div>
+  </div>
+</div></section>
+
+<section id="contact" class="sec"><div class="wrap"><div class="cgrid">
+  <div>
+    <span class="rule"></span>
+    <h2>Ia legătura cu noi</h2>
+    <p class="cd">Suntem disponibili pentru consultații și urgențe. Programează-te astăzi pentru un zâmbet mai sănătos.</p>
+    <div class="ci"><div class="ic">📍</div><div><small>Adresă</small>Str. Florilor 12, Sector 1<br>București, România</div></div>
+    <div class="ci"><div class="ic">📞</div><div><small>Telefon</small><a href="tel:+40721234567">+40 721 234 567</a></div></div>
+    <div class="ci"><div class="ic">✉️</div><div><small>Email</small><a href="mailto:contact@zenitdental.ro">contact@zenitdental.ro</a></div></div>
+    <div class="ci"><div class="ic">🕐</div><div><small>Program</small>Luni–Vineri: 09:00–18:00<br>Sâmbătă: 10:00–14:00 · Duminică: închis</div></div>
+  </div>
+  <form class="form" id="f">
+    <h3>Programare online</h3>
+    <div class="fr"><div class="fg"><label for="n">Nume pacient</label><input id="n" type="text" placeholder="Nume și prenume" required></div><div class="fg"><label for="t">Telefon</label><input id="t" type="tel" placeholder="07xx xxx xxx" required></div></div>
+    <div class="fr"><div class="fg"><label for="e">Email</label><input id="e" type="email" placeholder="email@domeniu.ro"></div>
+      <div class="fg"><label for="s">Tipul serviciului</label><select id="s"><option>Consultație generală</option><option>Urgență / durere</option><option>Estetică dentară</option><option>Implantologie</option><option>Ortodonție</option><option>Igienizare</option></select></div></div>
+    <div class="fr"><div class="fg"><label for="d">Data preferată</label><input id="d" type="date"></div>
+      <div class="fg"><label for="i">Interval orar</label><select id="i"><option>Dimineața (09:00–12:00)</option><option>Prânz (12:00–15:00)</option><option>După-amiază (15:00–18:00)</option></select></div></div>
+    <div class="fr one"><div class="fg"><label for="m">Simptome / detalii</label><textarea id="m" placeholder="Descrie simptomele sau istoricul medical relevant"></textarea></div></div>
+    <button class="btn gold" type="submit">Trimite solicitarea</button>
+    <p class="gdpr">Datele sunt procesate confidențial, conform GDPR.</p>
+  </form>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="fg4">
+    <div><div class="fbrand"><span class="mark"></span><span><b>ZENIT</b><i>dental</i></span></div><p style="max-width:300px">Zâmbete sănătoase încep aici. Servicii stomatologice de excelență, tehnologie modernă și o atmosferă primitoare în București.</p></div>
+    <div><h4>Tratamente</h4><ul><li><a href="#services">Implantologie</a></li><li><a href="#services">Ortodonție</a></li><li><a href="#services">Estetică dentară</a></li><li><a href="#services">Igienizare</a></li><li><a href="#services">Chirurgie dentară</a></li><li><a href="#services">Parodontologie</a></li></ul></div>
+    <div><h4>Program</h4><div class="sr"><b>Luni–Vineri</b><span>09:00–18:00</span></div><div class="sr"><b>Sâmbătă</b><span>10:00–14:00</span></div><div class="sr"><b>Duminică</b><span>Închis</span></div><p style="margin-top:14px"><a href="tel:+40721234567" style="color:#fff;font:700 16px var(--fs)">+40 721 234 567</a></p></div>
+    <div><h4>Locație</h4><p style="margin-bottom:16px">Str. Florilor 12, Sector 1<br>București, România</p><a href="https://maps.google.com" target="_blank" rel="noopener" class="btn ghost">Vezi pe hartă</a></div>
+  </div>
+  <div class="fb"><span>© 2026 Zenit Dental. Toate drepturile rezervate.</span><div><a href="#">Confidențialitate</a><a href="#">GDPR</a><a href="#">Cookies</a></div></div>
+</div></footer>
+
+<div class="sticky"><a href="tel:+40721234567" class="c">Sună</a><a href="https://wa.me/40721234567" target="_blank" rel="noopener" class="w">WhatsApp</a></div>
+
+<script>
+const dr=document.getElementById('dr'),close=()=>dr.classList.remove('open');
+document.getElementById('bb').onclick=()=>dr.classList.add('open');
+document.getElementById('dc').onclick=close;
+dr.onclick=e=>{if(e.target===dr||e.target.tagName==='A')close()};
+document.getElementById('f').onsubmit=e=>{e.preventDefault();const b=e.target.querySelector('button');b.textContent='Solicitare trimisă. Te sunăm noi.';b.disabled=true};
+</script>
 </body>
-
 </html>
