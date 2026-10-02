@@ -958,7 +958,132 @@
       background: #25d366;
       color: #fff
     }
+#stats {
+  position: relative;
+  width: 100%;
+  padding: 80px 0;
+  background: #f8f4ef;
+}
 
+.stats-wrap {
+  width: 100%;
+  padding: 0 6vw;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #d4cdc6;
+  border-bottom: 1px solid #d4cdc6;
+}
+
+.stat-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+  padding: 35px 30px;
+  border-right: 1px solid #d4cdc6;
+  transition: transform .4s ease, background-color .4s ease;
+}
+
+.stat-card:first-child {
+  border-left: 1px solid #d4cdc6;
+}
+
+.stat-card:hover {
+  background: #f2eae0;
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .08em;
+  color: #bfa278;
+  margin-bottom: auto;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.stat-content strong {
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(26px, 2.2vw, 38px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #1d2939;
+}
+
+.stat-content span {
+  font-family: "Outfit", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #756e67;
+}
+
+.stat-content small {
+  max-width: 240px;
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #9a938c;
+}
+
+@media (max-width: 991px) {
+  #stats {
+    padding: 60px 0;
+  }
+
+  .stats-wrap {
+    padding: 0 24px;
+  }
+
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-card:nth-child(2) {
+    border-right: 0;
+  }
+
+  .stat-card:nth-child(3),
+  .stat-card:nth-child(4) {
+    border-top: 1px solid #d4cdc6;
+  }
+}
+
+@media (max-width: 575px) {
+  #stats {
+    padding: 45px 0;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    min-height: 190px;
+    padding: 28px 24px;
+    border-right: 0;
+    border-left: 1px solid #d4cdc6;
+    border-right: 1px solid #d4cdc6;
+    border-bottom: 1px solid #d4cdc6;
+  }
+
+  .stat-card:first-child {
+    border-bottom: 1px solid #d4cdc6;
+  }
+
+  .stat-card + .stat-card {
+    border-top: 0;
+  }
+}
     @media(max-width:1100px) {
       .wrap {
         padding: 0 28px
@@ -1234,7 +1359,7 @@
       </div>
     </div>
   </section>
-  
+
 <section id="stats" class="stats-section">
   <div class="stats-wrap">
 
