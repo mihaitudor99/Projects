@@ -1,454 +1,1627 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Zenit Dental — Clinică Stomatologică București</title>
-<meta name="description" content="Zenit Dental: clinică stomatologică modernă în București. Implanturi, ortodonție, estetică dentară.">
-<meta name="theme-color" content="#07254a">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="ro_RO">
-<meta property="og:site_name" content="Zenit Dental">
-<meta property="og:title" content="Zenit Dental — Clinică Stomatologică București">
-<meta property="og:description" content="Diagnostic, tratament și laborator propriu sub același acoperiș. Implanturi, ortodonție, estetică dentară.">
-<meta name="twitter:card" content="summary">
-<script type="application/ld+json">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Zenit Dental — Clinică Stomatologică București</title>
+  <meta name="description"
+    content="Zenit Dental: clinică stomatologică modernă în București. Implanturi, ortodonție, estetică dentară.">
+  <meta name="theme-color" content="#07254a">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ro_RO">
+  <meta property="og:site_name" content="Zenit Dental">
+  <meta property="og:title" content="Zenit Dental — Clinică Stomatologică București">
+  <meta property="og:description"
+    content="Diagnostic, tratament și laborator propriu sub același acoperiș. Implanturi, ortodonție, estetică dentară.">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Dentist","name":"Zenit Dental","description":"Clinică stomatologică în București: implanturi, ortodonție, estetică dentară, endodonție și igienizare.","telephone":"+40721234567","email":"contact@zenitdental.ro","address":{"@type":"PostalAddress","streetAddress":"Str. Florilor 12, Sector 1","addressLocality":"București","addressCountry":"RO"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"10:00","closes":"14:00"}]}
 </script>
-<link rel="icon" type="image/png" href="zenitfavicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{--gold:#d9b165;--gold-d:#a98237;--navy:#07254a;--navy2:#041832;--card:#0d3260;--bg:#fff;--soft:#f6f4ef;--text:#14243b;--muted:#586a80;--line:rgba(7,37,74,.1);--nav:rgba(255,255,255,.94);--ink:#07254a;
---fh:'Cormorant Garamond',Georgia,serif;--fs:'Montserrat',Arial,sans-serif;--fb:'Open Sans',Arial,sans-serif;--logo: url(zenitlogo.jpg);
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#061a33;--soft:#0a2444;--text:#eef1f6;--muted:#a6b4c7;--line:rgba(255,255,255,.1);--nav:rgba(6,26,51,.92);--ink:#f1e3c2}}
-:root[data-theme="dark"]{--bg:#061a33;--soft:#0a2444;--text:#eef1f6;--muted:#a6b4c7;--line:rgba(255,255,255,.1);--nav:rgba(6,26,51,.92);--ink:#f1e3c2}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:calc(90px + env(safe-area-inset-top,0px));overflow-x:hidden}
-body{font-family:var(--fb);color:var(--text);background:var(--bg);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}ul{list-style:none}
-.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
-.mark{background:var(--logo) center/cover no-repeat;border-radius:50%;flex-shrink:0}
-h1,h2,h3{font-family:var(--fh);font-weight:600;line-height:1.1}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;border-radius:50px;cursor:pointer;font:700 11px var(--fs);letter-spacing:1.2px;text-transform:uppercase;padding:14px 28px;transition:.25s;white-space:nowrap}
-.btn:hover{transform:translateY(-2px)}
-.btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.gold{background:var(--gold);color:var(--navy2)}.gold:hover{background:#ecc885}
-.ghost{color:#fff;border-color:rgba(255,255,255,.4)}.ghost:hover{border-color:var(--gold);color:var(--gold)}
-.sec{padding:100px 0}
-.head{max-width:680px;margin-bottom:56px}
-.head h2{font-size:clamp(2.2rem,4vw,3.3rem);color:var(--ink);margin-bottom:14px}
-.head p{color:var(--muted);font-size:16px}
-.rule{display:block;width:48px;height:2px;background:var(--gold);margin-bottom:18px}
-
-/* NAV */
-#nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:0;right:0;z-index:900}
-.pill{display:flex;align-items:center;gap:8px;background:var(--nav);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--line);border-radius:50px;padding:7px 8px 7px 10px;box-shadow:0 8px 30px rgba(4,24,50,.14)}
-.brand{display:flex;align-items:center;gap:11px;margin-right:6px}
-.brand .mark{width:42px;height:42px}
-.brand b{display:block;font:600 19px/1 var(--fs);letter-spacing:5px;color:var(--ink)}
-.brand i{display:block;font:500 12px/1 var(--fs);letter-spacing:6px;color:var(--gold-d);margin-top:3px;font-style:normal;text-transform:lowercase}
-.links{display:flex;flex:1;justify-content:center;gap:2px}
-.links a{padding:8px 14px;font:600 11px var(--fs);letter-spacing:.6px;color:var(--muted);border-radius:50px;transition:.2s}
-.links a:hover{color:var(--ink);background:var(--line)}
-.burger{display:none;margin-left:auto;background:none;border:0;cursor:pointer;color:var(--gold-d);padding:8px}
-.burger svg,.dclose svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
-.drawer{display:none;position:fixed;inset:0;z-index:950;background:rgba(4,24,50,.65)}
-.drawer.open{display:block}
-.dbox{position:absolute;top:0;right:0;bottom:0;width:min(320px,85vw);background:var(--bg);padding:84px 26px 26px;display:flex;flex-direction:column;gap:6px}
-.dbox a:not(.btn){padding:14px 16px;font:700 15px var(--fs);border-radius:10px}
-.dbox a:not(.btn):hover{background:var(--soft);color:var(--gold-d)}
-.dbox .btn{margin-top:14px}
-.dclose{position:absolute;top:22px;right:20px;background:none;border:0;color:var(--muted);cursor:pointer}
-
-/* HERO */
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:130px 0 90px;overflow:hidden;color:#fff; background-image: url(zenit1.jpg); background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;}
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(100deg, rgba(1, 24, 41, .97) 38%, rgba(2, 36, 61, .45) 100%);
-}
-
-
-#hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;width:100%}
-.hero-mark{position:relative;justify-self:center;width:min(400px,80%);aspect-ratio:1}
-.hero-mark .mark{width:100%;height:100%;box-shadow:0 0 0 14px rgba(217,177,101,.08),0 0 0 15px rgba(217,177,101,.35),0 40px 90px rgba(0,0,0,.5);animation:rise 1.2s cubic-bezier(.2,.7,.2,1) both}
-@keyframes rise{from{opacity:0;transform:scale(.92) translateY(16px)}}
-.eyebrow{font:600 12px var(--fs);letter-spacing:1px;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px}
-.eyebrow::before{content:"";width:32px;height:1px;background:var(--gold)}
-.hero h1,#hero h1{font-size:clamp(2.8rem,5.6vw,5rem);font-weight:600;margin-bottom:24px}
-#hero h1 em{font-style:italic;color:var(--gold);font-weight:500}
-.sub{color:rgba(255,255,255,.82);font-size:17px;max-width:480px;margin-bottom:34px;padding-left:18px;border-left:2px solid var(--gold)}
-.acts{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:46px}
-.hstats{display:flex;gap:40px;flex-wrap:wrap;padding-top:26px;border-top:1px solid rgba(255,255,255,.14)}
-.hstats b{display:block;font:600 2.4rem/1 var(--fh);color:var(--gold)}
-.hstats span{font:600 11px var(--fs);letter-spacing:.6px;color:#a9bad0}
-
-/* STATS */
-#stats{background:var(--soft);padding:34px 0}
-.srow{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.sc{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px 18px;border-top:3px solid var(--gold)}
-.sc b{display:block;font:600 1.5rem/1.1 var(--fh);color:var(--ink)}
-.sc span{display:block;font:700 11px var(--fs);color:var(--gold-d);margin:4px 0 2px}
-.sc small{font-size:12px;color:var(--muted)}
-
-/* ABOUT */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
-.step{padding:36px 32px 12px 0}
-.step+.step{padding-left:32px;border-left:1px solid var(--line)}
-.step h3{font-size:1.8rem;color:var(--ink);margin-bottom:10px}
-.step p{color:var(--muted);font-size:14.5px}
-.step .n{font:700 11px var(--fs);color:var(--gold-d);letter-spacing:1px;display:block;margin-bottom:14px}
-
-/* SERVICES */
-#services{background:var(--navy2);color:#fff}
-#services .head h2{color:#fff}#services .head p{color:#a9bad0}
-.sgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:16px;overflow:hidden}
-.svc{background:var(--navy2);padding:34px 28px;transition:background .25s;box-shadow:inset 0 -2px 0 transparent}
-.svc:hover{background:var(--card);box-shadow:inset 0 -2px 0 var(--gold)}
-.svc h3{font-size:1.6rem;margin-bottom:8px;color:#fff}
-.svc p{font-size:13.5px;color:#a9bad0;margin-bottom:18px}
-.price{font:600 1.7rem var(--fh);color:var(--gold)}
-.price small{font:400 12px var(--fb);color:#a9bad0;margin-left:4px}
-
-/* TEAM */
-.tgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
-.doc{text-align:center}
-.av{aspect-ratio:3/4;border-radius:14px;background:linear-gradient(160deg,var(--card),var(--navy2));display:flex;align-items:center;justify-content:center;font:600 3.2rem var(--fh);color:var(--gold);border:1px solid rgba(217,177,101,.35);margin-bottom:14px;transition:transform .25s}
-.doc:hover .av{transform:translateY(-6px)}
-.doc b{display:block;font:700 14px var(--fs);color:var(--ink)}
-.doc span{font-size:12.5px;color:var(--gold-d);font-weight:600}
-
-/* TESTIMONIALS */
-#testimonials{background:var(--soft)}
-.tgrid2{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.tc{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:30px;display:flex;flex-direction:column;gap:16px}
-.stars{color:var(--gold);letter-spacing:3px}
-.tc p{font:500 1.25rem/1.45 var(--fh);color:var(--text);flex:1}
-.tc b{display:block;font:700 13px var(--fs);color:var(--ink)}
-.tc small{color:var(--muted);font-size:12px}
-
-/* CONTACT */
-#contact{background:var(--navy);color:#fff}
-.cgrid{display:grid;grid-template-columns:1fr 1.1fr;gap:70px;align-items:start}
-#contact h2{font-size:clamp(2.4rem,4vw,3.4rem);margin-bottom:14px}
-.cd{color:#b8c6d8;margin-bottom:34px}
-.ci{display:flex;gap:16px;margin-bottom:22px}
-.ci .ic{width:44px;height:44px;border:1px solid rgba(217,177,101,.4);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.ci small{display:block;font:700 11px var(--fs);color:var(--gold);letter-spacing:.5px}
-.ci a:hover{color:var(--gold)}
-.form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:38px}
-.form h3{font-size:2rem;margin-bottom:22px}
-.fr{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.fr.one{grid-template-columns:1fr}
-.fg label{display:block;font:600 11px var(--fs);color:#b8c6d8;margin-bottom:6px}
-.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:13px 14px;color:#fff;font:14px var(--fb)}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
-.fg option{color:#111}.fg textarea{min-height:90px;resize:vertical}
-.form .btn{width:100%;margin-top:10px}
-.gdpr{font-size:11px;color:#8fa2ba;text-align:center;margin-top:12px}
-
-/* FOOTER */
-footer{background:var(--navy2);border-top:2px solid var(--gold);padding:68px 0 26px;color:#a9bad0;font-size:13px}
-.fg4{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:48px}
-.fbrand{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-.fbrand .mark{width:60px;height:60px}
-.fbrand b{display:block;font:600 22px/1 var(--fs);letter-spacing:6px;color:#fff}
-.fbrand i{display:block;font:500 13px/1 var(--fs);letter-spacing:7px;color:var(--gold);margin-top:5px;font-style:normal}
-footer h4{font:700 12px var(--fs);letter-spacing:1px;color:#fff;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid rgba(217,177,101,.4);display:inline-block}
-footer li{margin-bottom:9px}footer a:hover{color:var(--gold)}
-.sr{display:flex;justify-content:space-between;gap:14px;margin-bottom:6px}.sr b{color:#fff;font-weight:600}
-.fb{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12px}
-.fb a{margin-left:18px}
-
-/* FAQ */
-#faq{background:var(--bg)}
-.faq{max-width:820px;border-top:1px solid var(--line)}
-.faq details{border-bottom:1px solid var(--line);padding:22px 0}
-.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font:600 1.5rem/1.25 var(--fh);color:var(--ink)}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--gold-d);font:400 1.8rem/1 var(--fs);transition:transform .25s}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq p{color:var(--muted);margin-top:12px;max-width:680px}
-.sticky{display:none;position:fixed;left:0;right:0;bottom:0;z-index:800;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));gap:10px}
-.sticky a{flex:1;text-align:center;padding:14px;border-radius:50px;font:800 11px var(--fs);letter-spacing:1px;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-.sticky .c{background:var(--navy);color:#fff}.sticky .w{background:#25d366;color:#fff}
-
-@media(max-width:1100px){.wrap{padding:0 28px}.sgrid{grid-template-columns:repeat(2,1fr)}.tgrid{grid-template-columns:repeat(3,1fr)}.srow{grid-template-columns:repeat(3,1fr)}.fg4{grid-template-columns:1fr 1fr}}
-@media(max-width:900px){.wrap{padding:0 20px}.links,.pill>.btn{display:none}.burger{display:block}
-#hero .wrap{grid-template-columns:1fr}.hero-mark{order:-1;width:150px;justify-self:start}.hero-mark .mark{box-shadow:0 0 0 6px rgba(217,177,101,.12),0 20px 50px rgba(0,0,0,.5)}
-.sec{padding:72px 0}.steps{grid-template-columns:1fr}.step,.step+.step{padding:28px 0;border-left:0;border-bottom:1px solid var(--line)}
-.sgrid,.tgrid2,.cgrid,.fg4{grid-template-columns:1fr}.cgrid{gap:44px}.tgrid{grid-template-columns:repeat(2,1fr)}.srow{grid-template-columns:repeat(2,1fr)}
-.sticky{display:flex}body{padding-bottom:72px}.fb{flex-direction:column;text-align:center}.fb a{margin:0 8px}}
-@media(max-width:600px){.acts{flex-direction:column}.acts .btn{width:100%}.fr{grid-template-columns:1fr}.form{padding:26px}}
-/* SCROLL ANIMATIONS */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(35px);
-    transition:
-        opacity .8s cubic-bezier(.2,.7,.2,1),
-        transform .8s cubic-bezier(.2,.7,.2,1);
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.reveal-left {
-    opacity: 0;
-    transform: translateX(-40px);
-    transition:
-        opacity .8s cubic-bezier(.2,.7,.2,1),
-        transform .8s cubic-bezier(.2,.7,.2,1);
-}
-
-.reveal-left.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.reveal-right {
-    opacity: 0;
-    transform: translateX(40px);
-    transition:
-        opacity .8s cubic-bezier(.2,.7,.2,1),
-        transform .8s cubic-bezier(.2,.7,.2,1);
-}
-
-.reveal-right.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Stagger pentru carduri */
-.stagger > * {
-    opacity: 0;
-    transform: translateY(30px);
-    transition:
-        opacity .7s cubic-bezier(.2,.7,.2,1),
-        transform .7s cubic-bezier(.2,.7,.2,1);
-}
-
-.stagger.visible > * {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.stagger.visible > *:nth-child(1) { transition-delay: .05s; }
-.stagger.visible > *:nth-child(2) { transition-delay: .12s; }
-.stagger.visible > *:nth-child(3) { transition-delay: .19s; }
-.stagger.visible > *:nth-child(4) { transition-delay: .26s; }
-.stagger.visible > *:nth-child(5) { transition-delay: .33s; }
-.stagger.visible > *:nth-child(6) { transition-delay: .40s; }
-
-/* Mic efect pentru imaginea hero */
-#hero {
-    background-attachment: scroll;
-}
-
-@media (min-width: 901px) {
-    #hero {
-        background-attachment: fixed;
+  <link rel="icon" type="image/png" href="zenitfavicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --gold: #d9b165;
+      --gold-d: #a98237;
+      --navy: #07254a;
+      --navy2: #041832;
+      --card: #0d3260;
+      --bg: #fff;
+      --soft: #f6f4ef;
+      --text: #14243b;
+      --muted: #586a80;
+      --line: rgba(7, 37, 74, .1);
+      --nav: rgba(255, 255, 255, .94);
+      --ink: #07254a;
+      --fh: 'Cormorant Garamond', Georgia, serif;
+      --fs: 'Montserrat', Arial, sans-serif;
+      --fb: 'Open Sans', Arial, sans-serif;
+      --logo: url(zenitlogo.jpg);
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px)
     }
-}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
-</style>
+
+    @media(prefers-color-scheme:dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #061a33;
+        --soft: #0a2444;
+        --text: #eef1f6;
+        --muted: #a6b4c7;
+        --line: rgba(255, 255, 255, .1);
+        --nav: rgba(6, 26, 51, .92);
+        --ink: #f1e3c2
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #061a33;
+      --soft: #0a2444;
+      --text: #eef1f6;
+      --muted: #a6b4c7;
+      --line: rgba(255, 255, 255, .1);
+      --nav: rgba(6, 26, 51, .92);
+      --ink: #f1e3c2
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(90px + env(safe-area-inset-top, 0px));
+      overflow-x: hidden
+    }
+
+    body {
+      font-family: var(--fb);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    ul {
+      list-style: none
+    }
+
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 40px
+    }
+
+    .mark {
+      background: var(--logo) center/cover no-repeat;
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--fh);
+      font-weight: 600;
+      line-height: 1.1
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid transparent;
+      border-radius: 50px;
+      cursor: pointer;
+      font: 700 11px var(--fs);
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      transition: .25s;
+      white-space: nowrap
+    }
+
+    .btn:hover {
+      transform: translateY(-2px)
+    }
+
+    .btn:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px
+    }
+
+    .gold {
+      background: var(--gold);
+      color: var(--navy2)
+    }
+
+    .gold:hover {
+      background: #ecc885
+    }
+
+    .ghost {
+      color: #fff;
+      border-color: rgba(255, 255, 255, .4)
+    }
+
+    .ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold)
+    }
+
+    .sec {
+      padding: 100px 0
+    }
+
+    .head {
+      max-width: 680px;
+      margin-bottom: 56px
+    }
+
+    .head h2 {
+      font-size: clamp(2.2rem, 4vw, 3.3rem);
+      color: var(--ink);
+      margin-bottom: 14px
+    }
+
+    .head p {
+      color: var(--muted);
+      font-size: 16px
+    }
+
+    .rule {
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 18px
+    }
+
+    /* NAV */
+    #nav {
+      position: fixed;
+      top: calc(14px + env(safe-area-inset-top, 0px));
+      left: 0;
+      right: 0;
+      z-index: 900
+    }
+
+    .pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--nav);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--line);
+      border-radius: 50px;
+      padding: 7px 8px 7px 10px;
+      box-shadow: 0 8px 30px rgba(4, 24, 50, .14)
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-right: 6px
+    }
+
+    .brand .mark {
+      width: 42px;
+      height: 42px
+    }
+
+    .brand b {
+      display: block;
+      font: 600 19px/1 var(--fs);
+      letter-spacing: 5px;
+      color: var(--ink)
+    }
+
+    .brand i {
+      display: block;
+      font: 500 12px/1 var(--fs);
+      letter-spacing: 6px;
+      color: var(--gold-d);
+      margin-top: 3px;
+      font-style: normal;
+      text-transform: lowercase
+    }
+
+    .links {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      gap: 2px
+    }
+
+    .links a {
+      padding: 8px 14px;
+      font: 600 11px var(--fs);
+      letter-spacing: .6px;
+      color: var(--muted);
+      border-radius: 50px;
+      transition: .2s
+    }
+
+    .links a:hover {
+      color: var(--ink);
+      background: var(--line)
+    }
+
+    .burger {
+      display: none;
+      margin-left: auto;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      color: var(--gold-d);
+      padding: 8px
+    }
+
+    .burger svg,
+    .dclose svg {
+      width: 26px;
+      height: 26px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round
+    }
+
+    .drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 950;
+      background: rgba(4, 24, 50, .65)
+    }
+
+    .drawer.open {
+      display: block
+    }
+
+    .dbox {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(320px, 85vw);
+      background: var(--bg);
+      padding: 84px 26px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px
+    }
+
+    .dbox a:not(.btn) {
+      padding: 14px 16px;
+      font: 700 15px var(--fs);
+      border-radius: 10px
+    }
+
+    .dbox a:not(.btn):hover {
+      background: var(--soft);
+      color: var(--gold-d)
+    }
+
+    .dbox .btn {
+      margin-top: 14px
+    }
+
+    .dclose {
+      position: absolute;
+      top: 22px;
+      right: 20px;
+      background: none;
+      border: 0;
+      color: var(--muted);
+      cursor: pointer
+    }
+
+    /* HERO */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 130px 0 90px;
+      overflow: hidden;
+      color: #fff;
+      background-image: url(zenit1.jpg);
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(100deg, rgba(1, 24, 41, .97) 38%, rgba(2, 36, 61, .45) 100%);
+    }
+
+
+    #hero .wrap {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 40px;
+      align-items: center;
+      width: 100%
+    }
+
+    .hero-mark {
+      position: relative;
+      justify-self: center;
+      width: min(400px, 80%);
+      aspect-ratio: 1
+    }
+
+    .hero-mark .mark {
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 0 14px rgba(217, 177, 101, .08), 0 0 0 15px rgba(217, 177, 101, .35), 0 40px 90px rgba(0, 0, 0, .5);
+      animation: rise 1.2s cubic-bezier(.2, .7, .2, 1) both
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: scale(.92) translateY(16px)
+      }
+    }
+
+    .eyebrow {
+      font: 600 12px var(--fs);
+      letter-spacing: 1px;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: var(--gold)
+    }
+
+    .hero h1,
+    #hero h1 {
+      font-size: clamp(2.8rem, 5.6vw, 5rem);
+      font-weight: 600;
+      margin-bottom: 24px
+    }
+
+    #hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 500
+    }
+
+    .sub {
+      color: rgba(255, 255, 255, .82);
+      font-size: 17px;
+      max-width: 480px;
+      margin-bottom: 34px;
+      padding-left: 18px;
+      border-left: 2px solid var(--gold)
+    }
+
+    .acts {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 46px
+    }
+
+    .hstats {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255, 255, 255, .14)
+    }
+
+    .hstats b {
+      display: block;
+      font: 600 2.4rem/1 var(--fh);
+      color: var(--gold)
+    }
+
+    .hstats span {
+      font: 600 11px var(--fs);
+      letter-spacing: .6px;
+      color: #a9bad0
+    }
+
+    /* STATS */
+    #stats {
+      background: var(--soft);
+      padding: 34px 0
+    }
+
+    .srow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px
+    }
+
+    .sc {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 20px 18px;
+      border-top: 3px solid var(--gold)
+    }
+
+    .sc b {
+      display: block;
+      font: 600 1.5rem/1.1 var(--fh);
+      color: var(--ink)
+    }
+
+    .sc span {
+      display: block;
+      font: 700 11px var(--fs);
+      color: var(--gold-d);
+      margin: 4px 0 2px
+    }
+
+    .sc small {
+      font-size: 12px;
+      color: var(--muted)
+    }
+
+    /* ABOUT */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--line)
+    }
+
+    .step {
+      padding: 36px 32px 12px 0
+    }
+
+    .step+.step {
+      padding-left: 32px;
+      border-left: 1px solid var(--line)
+    }
+
+    .step h3 {
+      font-size: 1.8rem;
+      color: var(--ink);
+      margin-bottom: 10px
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 14.5px
+    }
+
+    .step .n {
+      font: 700 11px var(--fs);
+      color: var(--gold-d);
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 14px
+    }
+
+    /* SERVICES */
+    #services {
+      background: var(--navy2);
+      color: #fff
+    }
+
+    #services .head h2 {
+      color: #fff
+    }
+
+    #services .head p {
+      color: #a9bad0
+    }
+
+    .sgrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: 16px;
+      overflow: hidden
+    }
+
+    .svc {
+      background: var(--navy2);
+      padding: 34px 28px;
+      transition: background .25s;
+      box-shadow: inset 0 -2px 0 transparent
+    }
+
+    .svc:hover {
+      background: var(--card);
+      box-shadow: inset 0 -2px 0 var(--gold)
+    }
+
+    .svc h3 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      color: #fff
+    }
+
+    .svc p {
+      font-size: 13.5px;
+      color: #a9bad0;
+      margin-bottom: 18px
+    }
+
+    .price {
+      font: 600 1.7rem var(--fh);
+      color: var(--gold)
+    }
+
+    .price small {
+      font: 400 12px var(--fb);
+      color: #a9bad0;
+      margin-left: 4px
+    }
+
+    /* TEAM */
+    .tgrid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px
+    }
+
+    .doc {
+      text-align: center
+    }
+
+    .av {
+      aspect-ratio: 3/4;
+      border-radius: 14px;
+      background: linear-gradient(160deg, var(--card), var(--navy2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font: 600 3.2rem var(--fh);
+      color: var(--gold);
+      border: 1px solid rgba(217, 177, 101, .35);
+      margin-bottom: 14px;
+      transition: transform .25s
+    }
+
+    .doc:hover .av {
+      transform: translateY(-6px)
+    }
+
+    .doc b {
+      display: block;
+      font: 700 14px var(--fs);
+      color: var(--ink)
+    }
+
+    .doc span {
+      font-size: 12.5px;
+      color: var(--gold-d);
+      font-weight: 600
+    }
+
+    /* TESTIMONIALS */
+    #testimonials {
+      background: var(--soft)
+    }
+
+    .tgrid2 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px
+    }
+
+    .tc {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px
+    }
+
+    .stars {
+      color: var(--gold);
+      letter-spacing: 3px
+    }
+
+    .tc p {
+      font: 500 1.25rem/1.45 var(--fh);
+      color: var(--text);
+      flex: 1
+    }
+
+    .tc b {
+      display: block;
+      font: 700 13px var(--fs);
+      color: var(--ink)
+    }
+
+    .tc small {
+      color: var(--muted);
+      font-size: 12px
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--navy);
+      color: #fff
+    }
+
+    .cgrid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 70px;
+      align-items: start
+    }
+
+    #contact h2 {
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      margin-bottom: 14px
+    }
+
+    .cd {
+      color: #b8c6d8;
+      margin-bottom: 34px
+    }
+
+    .ci {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 22px
+    }
+
+    .ci .ic {
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(217, 177, 101, .4);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .ci small {
+      display: block;
+      font: 700 11px var(--fs);
+      color: var(--gold);
+      letter-spacing: .5px
+    }
+
+    .ci a:hover {
+      color: var(--gold)
+    }
+
+    .form {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 20px;
+      padding: 38px
+    }
+
+    .form h3 {
+      font-size: 2rem;
+      margin-bottom: 22px
+    }
+
+    .fr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px
+    }
+
+    .fr.one {
+      grid-template-columns: 1fr
+    }
+
+    .fg label {
+      display: block;
+      font: 600 11px var(--fs);
+      color: #b8c6d8;
+      margin-bottom: 6px
+    }
+
+    .fg input,
+    .fg select,
+    .fg textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 10px;
+      padding: 13px 14px;
+      color: #fff;
+      font: 14px var(--fb)
+    }
+
+    .fg input:focus,
+    .fg select:focus,
+    .fg textarea:focus {
+      border-color: var(--gold)
+    }
+
+    .fg option {
+      color: #111
+    }
+
+    .fg textarea {
+      min-height: 90px;
+      resize: vertical
+    }
+
+    .form .btn {
+      width: 100%;
+      margin-top: 10px
+    }
+
+    .gdpr {
+      font-size: 11px;
+      color: #8fa2ba;
+      text-align: center;
+      margin-top: 12px
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy2);
+      border-top: 2px solid var(--gold);
+      padding: 68px 0 26px;
+      color: #a9bad0;
+      font-size: 13px
+    }
+
+    .fg4 {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+      gap: 44px;
+      margin-bottom: 48px
+    }
+
+    .fbrand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px
+    }
+
+    .fbrand .mark {
+      width: 60px;
+      height: 60px
+    }
+
+    .fbrand b {
+      display: block;
+      font: 600 22px/1 var(--fs);
+      letter-spacing: 6px;
+      color: #fff
+    }
+
+    .fbrand i {
+      display: block;
+      font: 500 13px/1 var(--fs);
+      letter-spacing: 7px;
+      color: var(--gold);
+      margin-top: 5px;
+      font-style: normal
+    }
+
+    footer h4 {
+      font: 700 12px var(--fs);
+      letter-spacing: 1px;
+      color: #fff;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(217, 177, 101, .4);
+      display: inline-block
+    }
+
+    footer li {
+      margin-bottom: 9px
+    }
+
+    footer a:hover {
+      color: var(--gold)
+    }
+
+    .sr {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 6px
+    }
+
+    .sr b {
+      color: #fff;
+      font-weight: 600
+    }
+
+    .fb {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 12px
+    }
+
+    .fb a {
+      margin-left: 18px
+    }
+
+    /* FAQ */
+    #faq {
+      background: var(--bg)
+    }
+
+    .faq {
+      max-width: 820px;
+      border-top: 1px solid var(--line)
+    }
+
+    .faq details {
+      border-bottom: 1px solid var(--line);
+      padding: 22px 0
+    }
+
+    .faq summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font: 600 1.5rem/1.25 var(--fh);
+      color: var(--ink)
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none
+    }
+
+    .faq summary::after {
+      content: "+";
+      color: var(--gold-d);
+      font: 400 1.8rem/1 var(--fs);
+      transition: transform .25s
+    }
+
+    .faq details[open] summary::after {
+      transform: rotate(45deg)
+    }
+
+    .faq p {
+      color: var(--muted);
+      margin-top: 12px;
+      max-width: 680px
+    }
+
+    .sticky {
+      display: none;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 800;
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+      gap: 10px
+    }
+
+    .sticky a {
+      flex: 1;
+      text-align: center;
+      padding: 14px;
+      border-radius: 50px;
+      font: 800 11px var(--fs);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .25)
+    }
+
+    .sticky .c {
+      background: var(--navy);
+      color: #fff
+    }
+
+    .sticky .w {
+      background: #25d366;
+      color: #fff
+    }
+
+    @media(max-width:1100px) {
+      .wrap {
+        padding: 0 28px
+      }
+
+      .sgrid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .tgrid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .srow {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .fg4 {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:900px) {
+      .wrap {
+        padding: 0 20px
+      }
+
+      .links,
+      .pill>.btn {
+        display: none
+      }
+
+      .burger {
+        display: block
+      }
+
+      #hero .wrap {
+        grid-template-columns: 1fr
+      }
+
+      .hero-mark {
+        order: -1;
+        width: 150px;
+        justify-self: start
+      }
+
+      .hero-mark .mark {
+        box-shadow: 0 0 0 6px rgba(217, 177, 101, .12), 0 20px 50px rgba(0, 0, 0, .5)
+      }
+
+      .sec {
+        padding: 72px 0
+      }
+
+      .steps {
+        grid-template-columns: 1fr
+      }
+
+      .step,
+      .step+.step {
+        padding: 28px 0;
+        border-left: 0;
+        border-bottom: 1px solid var(--line)
+      }
+
+      .sgrid,
+      .tgrid2,
+      .cgrid,
+      .fg4 {
+        grid-template-columns: 1fr
+      }
+
+      .cgrid {
+        gap: 44px
+      }
+
+      .tgrid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .srow {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .sticky {
+        display: flex
+      }
+
+      body {
+        padding-bottom: 72px
+      }
+
+      .fb {
+        flex-direction: column;
+        text-align: center
+      }
+
+      .fb a {
+        margin: 0 8px
+      }
+    }
+
+    @media(max-width:600px) {
+      .acts {
+        flex-direction: column
+      }
+
+      .acts .btn {
+        width: 100%
+      }
+
+      .fr {
+        grid-template-columns: 1fr
+      }
+
+      .form {
+        padding: 26px
+      }
+    }
+
+    /* SCROLL ANIMATIONS */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition:
+        opacity .8s cubic-bezier(.2, .7, .2, 1),
+        transform .8s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition:
+        opacity .8s cubic-bezier(.2, .7, .2, 1),
+        transform .8s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition:
+        opacity .8s cubic-bezier(.2, .7, .2, 1),
+        transform .8s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Stagger pentru carduri */
+    .stagger>* {
+      opacity: 0;
+      transform: translateY(30px);
+      transition:
+        opacity .7s cubic-bezier(.2, .7, .2, 1),
+        transform .7s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .stagger.visible>* {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger.visible>*:nth-child(1) {
+      transition-delay: .05s;
+    }
+
+    .stagger.visible>*:nth-child(2) {
+      transition-delay: .12s;
+    }
+
+    .stagger.visible>*:nth-child(3) {
+      transition-delay: .19s;
+    }
+
+    .stagger.visible>*:nth-child(4) {
+      transition-delay: .26s;
+    }
+
+    .stagger.visible>*:nth-child(5) {
+      transition-delay: .33s;
+    }
+
+    .stagger.visible>*:nth-child(6) {
+      transition-delay: .40s;
+    }
+
+    /* Mic efect pentru imaginea hero */
+    #hero {
+      background-attachment: scroll;
+    }
+
+    @media (min-width: 901px) {
+      #hero {
+        background-attachment: fixed;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav id="nav"><div class="wrap stagger"><div class="pill">
-  <a href="#" class="brand" aria-label="Zenit Dental"><span class="mark" style="width:42px;height:42px"></span><span><b>ZENIT</b><i>dental</i></span></a>
-  <ul class="links"><li><a href="#about">Despre</a></li><li><a href="#services">Servicii</a></li><li><a href="#team">Echipă</a></li><li><a href="#testimonials">Recenzii</a></li><li><a href="#contact">Contact</a></li></ul>
-  <a href="tel:+40721234567" class="btn gold">Programare</a>
-  <button class="burger" id="bb" aria-label="Meniu"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
-</div></div></nav>
+  <nav id="nav">
+    <div class="wrap stagger">
+      <div class="pill">
+        <a href="#" class="brand" aria-label="Zenit Dental"><span class="mark"
+            style="width:42px;height:42px"></span><span><b>ZENIT</b><i>dental</i></span></a>
+        <ul class="links">
+          <li><a href="#about">Despre</a></li>
+          <li><a href="#services">Servicii</a></li>
+          <li><a href="#team">Echipă</a></li>
+          <li><a href="#testimonials">Recenzii</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="tel:+40721234567" class="btn gold">Programare</a>
+        <button class="burger" id="bb" aria-label="Meniu"><svg viewBox="0 0 24 24">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg></button>
+      </div>
+    </div>
+  </nav>
 
-<div class="drawer stagger" id="dr"><div class="dbox">
-  <button class="dclose" id="dc" aria-label="Închide"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-  <a href="#about">Despre</a><a href="#services">Servicii</a><a href="#team">Echipă</a><a href="#testimonials">Recenzii</a><a href="#contact">Contact</a>
-  <a href="tel:+40721234567" class="btn gold">Programare</a>
-</div></div>
-
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="wrap">
-  <div style="z-index: 2;" class="stagger">
-    <div class="eyebrow">Clinică stomatologică în București</div>
-    <h1>De la diagnostic la <em>zâmbetul final</em>, fără drumuri inutile.</h1>
-    <p class="sub">O singură clinică, o echipă dedicată și toate specializările sub același acoperiș. Bine ai venit la Zenit Dental.</p>
-    <div class="acts"><a href="#contact" class="btn gold">Programează-te online</a><a href="#about" class="btn ghost">Descoperă mai mult</a></div>
-    <div class="hstats">
-      <div><b>15+</b><span>Ani de experiență</span></div>
-      <div><b>3.000+</b><span>Pacienți mulțumiți</span></div>
-      <div><b>98%</b><span>Satisfacție</span></div>
+  <div class="drawer stagger" id="dr">
+    <div class="dbox">
+      <button class="dclose" id="dc" aria-label="Închide"><svg viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg></button>
+      <a href="#about">Despre</a><a href="#services">Servicii</a><a href="#team">Echipă</a><a
+        href="#testimonials">Recenzii</a><a href="#contact">Contact</a>
+      <a href="tel:+40721234567" class="btn gold">Programare</a>
     </div>
   </div>
-</div></section>
 
-<section id="stats"><div class="wrap"><div class="srow stagger">
-  <div class="sc"><b>18+ medici</b><span>Specialiști de top</span><small>Toate domeniile acoperite</small></div>
-  <div class="sc"><b>Radiologie</b><span>Digitală, in-house</span><small>Diagnostic complet pe loc</small></div>
-  <div class="sc"><b>Laborator</b><span>Tehnic propriu</span><small>Lucrări în timp record</small></div>
-  <div class="sc"><b>10 cabinete</b><span>Ultra-moderne</span><small>Fără timp de așteptare</small></div>
-  <div class="sc"><b>10.000+</b><span>Zâmbete reușite</span><small>Te așteptăm și pe tine</small></div>
-</div></div></section>
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="wrap">
+      <div style="z-index: 2;" class="stagger">
+        <div class="eyebrow">Clinică stomatologică în București</div>
+        <h1>De la diagnostic la <em>zâmbetul final</em>, fără drumuri inutile.</h1>
+        <p class="sub">O singură clinică, o echipă dedicată și toate specializările sub același acoperiș. Bine ai venit
+          la Zenit Dental.</p>
+        <div class="acts"><a href="#contact" class="btn gold">Programează-te online</a><a href="#about"
+            class="btn ghost">Descoperă mai mult</a></div>
+        <div class="hstats">
+          <div><b>15+</b><span>Ani de experiență</span></div>
+          <div><b>3.000+</b><span>Pacienți mulțumiți</span></div>
+          <div><b>98%</b><span>Satisfacție</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<section id="stats" class="stats-section">
+  <div class="stats-wrap">
 
-<section id="about" class="sec"><div class="wrap">
-  <div class="head reveal"><span class="rule"></span><h2>Circuit dentar complet. Laborator propriu.</h2><p>Eliminăm intermediarii. O singură clinică, o echipă sincronizată și toate specializările sub același acoperiș.</p></div>
-  <div class="steps stagger">
-    <div class="step"><span class="n">PASUL 1</span><h3>Diagnostic și plan</h3><p>Medicul și tehnicianul evaluează împreună cazul tău, stabilind forma și culoarea ideală direct în cabinet, fără drumuri suplimentare.</p></div>
-    <div class="step"><span class="n">PASUL 2</span><h3>Execuție pe loc</h3><p>Fără curierat, fără timpi morți. Lucrarea ta este realizată în laboratorul nostru intern, cu tehnologie CAD/CAM de ultimă generație.</p></div>
-    <div class="step"><span class="n">PASUL 3</span><h3>Zâmbetul final</h3><p>Ajustări fine făcute pe loc pentru o integrare estetică 100% naturală, o ocluzie perfectă și un pacient mulțumit.</p></div>
+    <div class="stats-row">
+
+      <div class="stat-card">
+        <span class="stat-number">01</span>
+        <div class="stat-content">
+          <strong>Implantologie</strong>
+          <span>Tratamente moderne</span>
+          <small>Soluții pentru înlocuirea dinților lipsă</small>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-number">02</span>
+        <div class="stat-content">
+          <strong>Protetică</strong>
+          <span>Estetică & funcționalitate</span>
+          <small>Lucrări dentare adaptate fiecărui pacient</small>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-number">03</span>
+        <div class="stat-content">
+          <strong>Terapie</strong>
+          <span>Îngrijire completă</span>
+          <small>De la igienizare până la tratamente complexe</small>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-number">04</span>
+        <div class="stat-content">
+          <strong>Dinți ficși</strong>
+          <span>Soluții complete</span>
+          <small>Reabilitare orală pe implanturi</small>
+        </div>
+      </div>
+
+    </div>
+
   </div>
-</div></section>
+</section>
 
-<section id="services" class="sec"><div class="wrap">
-  <div class="head reveal"><span class="rule"></span><h2>Serviciile noastre</h2><p>Tratamente complete pentru toată familia, cu cea mai avansată tehnologie.</p></div>
-  <div class="sgrid stagger">
-    <div class="svc"><h3>Albire profesională</h3><p>Albire in-office cu rezultate vizibile într-o singură ședință.</p><div class="price">150 RON <small>/ ședință</small></div></div>
-    <div class="svc"><h3>Implanturi dentare</h3><p>Înlocuire permanentă și estetică a dinților lipsă, cu implanturi din titan.</p><div class="price"><small style="margin:0 4px 0 0">de la</small>900 RON</div></div>
-    <div class="svc"><h3>Ortodonție</h3><p>Aparate dentare și alignere invizibile pentru un zâmbet perfect aliniat.</p><div class="price"><small style="margin:0 4px 0 0">de la</small>1.200 RON</div></div>
-    <div class="svc"><h3>Endodonție</h3><p>Tratament de canal fără durere, cu tehnologie microscopică avansată.</p><div class="price">400 RON</div></div>
-    <div class="svc"><h3>Igienizare și detartraj</h3><p>Curățare profesională cu ultrasunete și airflow pentru o dantură sănătoasă.</p><div class="price">60 RON</div></div>
-    <div class="svc"><h3>Fațete ceramice</h3><p>Fațete ultra-subțiri din porțelan pentru transformarea completă a zâmbetului.</p><div class="price"><small style="margin:0 4px 0 0">de la</small>350 RON</div></div>
-  </div>
-</div></section>
+  <section id="stats">
+    <div class="wrap">
+      <div class="srow stagger">
+        <div class="sc"><b>18+ medici</b><span>Specialiști de top</span><small>Toate domeniile acoperite</small></div>
+        <div class="sc"><b>Radiologie</b><span>Digitală, in-house</span><small>Diagnostic complet pe loc</small></div>
+        <div class="sc"><b>Laborator</b><span>Tehnic propriu</span><small>Lucrări în timp record</small></div>
+        <div class="sc"><b>10 cabinete</b><span>Ultra-moderne</span><small>Fără timp de așteptare</small></div>
+        <div class="sc"><b>10.000+</b><span>Zâmbete reușite</span><small>Te așteptăm și pe tine</small></div>
+      </div>
+    </div>
+  </section>
 
-<section id="team" class="sec"><div class="wrap">
-  <div class="head reveal"><span class="rule"></span><h2>Echipa medicală. Expertiză și pasiune.</h2><p>Suntem o echipă interdisciplinară unită de excelența medicală. Fiecare caz este analizat pentru soluții minim invazive și rezultate estetice durabile.</p></div>
-  <div class="tgrid stagger">
-    <div class="doc"><div class="av">EP</div><b>Dr. Elena Popescu</b><span>Stomatologie generală</span></div>
-    <div class="doc"><div class="av">AM</div><b>Dr. Andrei Mihai</b><span>Implantologie</span></div>
-    <div class="doc"><div class="av">MI</div><b>Dr. Maria Ionescu</b><span>Ortodonție</span></div>
-    <div class="doc"><div class="av">RC</div><b>Dr. Radu Constantin</b><span>Chirurgie orală</span></div>
-    <div class="doc"><div class="av">AP</div><b>Dr. Ana Popa</b><span>Parodontologie</span></div>
-  </div>
-</div></section>
+  <section id="about" class="sec">
+    <div class="wrap">
+      <div class="head reveal"><span class="rule"></span>
+        <h2>Circuit dentar complet. Laborator propriu.</h2>
+        <p>Eliminăm intermediarii. O singură clinică, o echipă sincronizată și toate specializările sub același
+          acoperiș.</p>
+      </div>
+      <div class="steps stagger">
+        <div class="step"><span class="n">PASUL 1</span>
+          <h3>Diagnostic și plan</h3>
+          <p>Medicul și tehnicianul evaluează împreună cazul tău, stabilind forma și culoarea ideală direct în cabinet,
+            fără drumuri suplimentare.</p>
+        </div>
+        <div class="step"><span class="n">PASUL 2</span>
+          <h3>Execuție pe loc</h3>
+          <p>Fără curierat, fără timpi morți. Lucrarea ta este realizată în laboratorul nostru intern, cu tehnologie
+            CAD/CAM de ultimă generație.</p>
+        </div>
+        <div class="step"><span class="n">PASUL 3</span>
+          <h3>Zâmbetul final</h3>
+          <p>Ajustări fine făcute pe loc pentru o integrare estetică 100% naturală, o ocluzie perfectă și un pacient
+            mulțumit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="testimonials" class="sec"><div class="wrap">
-  <div class="head reveal"><span class="rule"></span><h2>Ce spun pacienții noștri</h2></div>
-  <div class="tgrid2 stagger">
-    <div class="tc"><div class="stars">★★★★★</div><p>„Dr. Popescu mi-a transformat complet zâmbetul. Fațetele arată incredibil de natural și toată experiența a fost fără stres."</p><div><b>Andreea M.</b><small>Fațete ceramice</small></div></div>
-    <div class="tc"><div class="stars">★★★★★</div><p>„Mă temeam de dentist, dar echipa m-a pus imediat la largul meu. Implantul a fost surprinzător de nedureros, iar rezultatul e perfect."</p><div><b>Radu C.</b><small>Implant dentar</small></div></div>
-    <div class="tc"><div class="stars">★★★★★</div><p>„Copiii mei adoră să vină la cabinet. Dr. Popescu are un talent special de a-i face să se simtă confortabil. Recomand cu drag!"</p><div><b>Maria T.</b><small>Pacient de familie</small></div></div>
-  </div>
-</div></section>
+  <section id="services" class="sec">
+    <div class="wrap">
+      <div class="head reveal"><span class="rule"></span>
+        <h2>Serviciile noastre</h2>
+        <p>Tratamente complete pentru toată familia, cu cea mai avansată tehnologie.</p>
+      </div>
+      <div class="sgrid stagger">
+        <div class="svc">
+          <h3>Albire profesională</h3>
+          <p>Albire in-office cu rezultate vizibile într-o singură ședință.</p>
+          <div class="price">150 RON <small>/ ședință</small></div>
+        </div>
+        <div class="svc">
+          <h3>Implanturi dentare</h3>
+          <p>Înlocuire permanentă și estetică a dinților lipsă, cu implanturi din titan.</p>
+          <div class="price"><small style="margin:0 4px 0 0">de la</small>900 RON</div>
+        </div>
+        <div class="svc">
+          <h3>Ortodonție</h3>
+          <p>Aparate dentare și alignere invizibile pentru un zâmbet perfect aliniat.</p>
+          <div class="price"><small style="margin:0 4px 0 0">de la</small>1.200 RON</div>
+        </div>
+        <div class="svc">
+          <h3>Endodonție</h3>
+          <p>Tratament de canal fără durere, cu tehnologie microscopică avansată.</p>
+          <div class="price">400 RON</div>
+        </div>
+        <div class="svc">
+          <h3>Igienizare și detartraj</h3>
+          <p>Curățare profesională cu ultrasunete și airflow pentru o dantură sănătoasă.</p>
+          <div class="price">60 RON</div>
+        </div>
+        <div class="svc">
+          <h3>Fațete ceramice</h3>
+          <p>Fațete ultra-subțiri din porțelan pentru transformarea completă a zâmbetului.</p>
+          <div class="price"><small style="margin:0 4px 0 0">de la</small>350 RON</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="faq" class="sec"><div class="wrap">
-  <div class="head reveal"><span class="rule"></span><h2>Întrebări frecvente</h2><p>Răspunsuri rapide înainte de prima vizită.</p></div>
-  <div class="faq reveal">
-    <details><summary>Cum mă pot programa la Zenit Dental?</summary><p>Poți completa formularul de programare online, ne poți suna la +40 721 234 567 sau ne poți scrie pe WhatsApp. Te contactăm pentru a confirma ziua și ora.</p></details>
-    <details><summary>Tratați și urgențele dentare?</summary><p>Da. Selectează „Urgență / durere" în formular sau sună-ne direct, iar echipa îți oferă prima oră disponibilă.</p></details>
-    <details><summary>Radiografiile se fac în clinică?</summary><p>Da, avem radiologie digitală în clinică, așa că diagnosticul se stabilește în aceeași vizită, fără drumuri suplimentare.</p></details>
-    <details><summary>De ce contează laboratorul propriu?</summary><p>Tehnicianul lucrează în clinică, alături de medic. Forma și culoarea lucrării se stabilesc direct cu tine, iar ajustările se fac pe loc, fără curierat.</p></details>
-    <details><summary>Ce trebuie să aduc la prima consultație?</summary><p>Un act de identitate și, dacă ai, radiografii sau documente medicale anterioare. Restul ne ocupăm noi.</p></details>
-    <details><summary>Care este programul clinicii?</summary><p>Luni–Vineri 09:00–18:00, sâmbătă 10:00–14:00. Duminica clinica este închisă.</p></details>
-  </div>
-</div></section>
+  <section id="team" class="sec">
+    <div class="wrap">
+      <div class="head reveal"><span class="rule"></span>
+        <h2>Echipa medicală. Expertiză și pasiune.</h2>
+        <p>Suntem o echipă interdisciplinară unită de excelența medicală. Fiecare caz este analizat pentru soluții minim
+          invazive și rezultate estetice durabile.</p>
+      </div>
+      <div class="tgrid stagger">
+        <div class="doc">
+          <div class="av">EP</div><b>Dr. Elena Popescu</b><span>Stomatologie generală</span>
+        </div>
+        <div class="doc">
+          <div class="av">AM</div><b>Dr. Andrei Mihai</b><span>Implantologie</span>
+        </div>
+        <div class="doc">
+          <div class="av">MI</div><b>Dr. Maria Ionescu</b><span>Ortodonție</span>
+        </div>
+        <div class="doc">
+          <div class="av">RC</div><b>Dr. Radu Constantin</b><span>Chirurgie orală</span>
+        </div>
+        <div class="doc">
+          <div class="av">AP</div><b>Dr. Ana Popa</b><span>Parodontologie</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="contact" class="sec"><div class="wrap"><div class="cgrid">
-  <div class="reveal-left">
-    <span class="rule"></span>
-    <h2>Ia legătura cu noi</h2>
-    <p class="cd">Suntem disponibili pentru consultații și urgențe. Programează-te astăzi pentru un zâmbet mai sănătos.</p>
-    <div class="ci"><div class="ic">📍</div><div><small>Adresă</small>Str. Florilor 12, Sector 1<br>București, România</div></div>
-    <div class="ci"><div class="ic">📞</div><div><small>Telefon</small><a href="tel:+40721234567">+40 721 234 567</a></div></div>
-    <div class="ci"><div class="ic">✉️</div><div><small>Email</small><a href="mailto:contact@zenitdental.ro">contact@zenitdental.ro</a></div></div>
-    <div class="ci"><div class="ic">🕐</div><div><small>Program</small>Luni–Vineri: 09:00–18:00<br>Sâmbătă: 10:00–14:00 · Duminică: închis</div></div>
-  </div>
-  <form class="form reveal-right" id="f">
-    <h3>Programare online</h3>
-    <div class="fr"><div class="fg"><label for="n">Nume pacient</label><input id="n" type="text" placeholder="Nume și prenume" required></div><div class="fg"><label for="t">Telefon</label><input id="t" type="tel" placeholder="07xx xxx xxx" required></div></div>
-    <div class="fr"><div class="fg"><label for="e">Email</label><input id="e" type="email" placeholder="email@domeniu.ro"></div>
-      <div class="fg"><label for="s">Tipul serviciului</label><select id="s"><option>Consultație generală</option><option>Urgență / durere</option><option>Estetică dentară</option><option>Implantologie</option><option>Ortodonție</option><option>Igienizare</option></select></div></div>
-    <div class="fr"><div class="fg"><label for="d">Data preferată</label><input id="d" type="date"></div>
-      <div class="fg"><label for="i">Interval orar</label><select id="i"><option>Dimineața (09:00–12:00)</option><option>Prânz (12:00–15:00)</option><option>După-amiază (15:00–18:00)</option></select></div></div>
-    <div class="fr one"><div class="fg"><label for="m">Simptome / detalii</label><textarea id="m" placeholder="Descrie simptomele sau istoricul medical relevant"></textarea></div></div>
-    <button class="btn gold" type="submit">Trimite solicitarea</button>
-    <p class="gdpr">Datele sunt procesate confidențial, conform GDPR.</p>
-  </form>
-</div></div></section>
+  <section id="testimonials" class="sec">
+    <div class="wrap">
+      <div class="head reveal"><span class="rule"></span>
+        <h2>Ce spun pacienții noștri</h2>
+      </div>
+      <div class="tgrid2 stagger">
+        <div class="tc">
+          <div class="stars">★★★★★</div>
+          <p>„Dr. Popescu mi-a transformat complet zâmbetul. Fațetele arată incredibil de natural și toată experiența a
+            fost fără stres."</p>
+          <div><b>Andreea M.</b><small>Fațete ceramice</small></div>
+        </div>
+        <div class="tc">
+          <div class="stars">★★★★★</div>
+          <p>„Mă temeam de dentist, dar echipa m-a pus imediat la largul meu. Implantul a fost surprinzător de
+            nedureros, iar rezultatul e perfect."</p>
+          <div><b>Radu C.</b><small>Implant dentar</small></div>
+        </div>
+        <div class="tc">
+          <div class="stars">★★★★★</div>
+          <p>„Copiii mei adoră să vină la cabinet. Dr. Popescu are un talent special de a-i face să se simtă
+            confortabil. Recomand cu drag!"</p>
+          <div><b>Maria T.</b><small>Pacient de familie</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer><div class="wrap">
-  <div class="fg4">
-    <div><div class="fbrand"><span class="mark"></span><span><b>ZENIT</b><i>dental</i></span></div><p style="max-width:300px">Zâmbete sănătoase încep aici. Servicii stomatologice de excelență, tehnologie modernă și o atmosferă primitoare în București.</p></div>
-    <div><h4>Tratamente</h4><ul><li><a href="#services">Implantologie</a></li><li><a href="#services">Ortodonție</a></li><li><a href="#services">Estetică dentară</a></li><li><a href="#services">Igienizare</a></li><li><a href="#services">Chirurgie dentară</a></li><li><a href="#services">Parodontologie</a></li></ul></div>
-    <div><h4>Program</h4><div class="sr"><b>Luni–Vineri</b><span>09:00–18:00</span></div><div class="sr"><b>Sâmbătă</b><span>10:00–14:00</span></div><div class="sr"><b>Duminică</b><span>Închis</span></div><p style="margin-top:14px"><a href="tel:+40721234567" style="color:#fff;font:700 16px var(--fs)">+40 721 234 567</a></p></div>
-    <div><h4>Locație</h4><p style="margin-bottom:16px">Str. Florilor 12, Sector 1<br>București, România</p><a href="https://maps.google.com" target="_blank" rel="noopener" class="btn ghost">Vezi pe hartă</a></div>
-  </div>
-  <div class="fb"><span>© 2026 Zenit Dental. Toate drepturile rezervate.</span><div><a href="#">Confidențialitate</a><a href="#">GDPR</a><a href="#">Cookies</a></div></div>
-</div></footer>
+  <section id="faq" class="sec">
+    <div class="wrap">
+      <div class="head reveal"><span class="rule"></span>
+        <h2>Întrebări frecvente</h2>
+        <p>Răspunsuri rapide înainte de prima vizită.</p>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Cum mă pot programa la Zenit Dental?</summary>
+          <p>Poți completa formularul de programare online, ne poți suna la +40 721 234 567 sau ne poți scrie pe
+            WhatsApp. Te contactăm pentru a confirma ziua și ora.</p>
+        </details>
+        <details>
+          <summary>Tratați și urgențele dentare?</summary>
+          <p>Da. Selectează „Urgență / durere" în formular sau sună-ne direct, iar echipa îți oferă prima oră
+            disponibilă.</p>
+        </details>
+        <details>
+          <summary>Radiografiile se fac în clinică?</summary>
+          <p>Da, avem radiologie digitală în clinică, așa că diagnosticul se stabilește în aceeași vizită, fără drumuri
+            suplimentare.</p>
+        </details>
+        <details>
+          <summary>De ce contează laboratorul propriu?</summary>
+          <p>Tehnicianul lucrează în clinică, alături de medic. Forma și culoarea lucrării se stabilesc direct cu tine,
+            iar ajustările se fac pe loc, fără curierat.</p>
+        </details>
+        <details>
+          <summary>Ce trebuie să aduc la prima consultație?</summary>
+          <p>Un act de identitate și, dacă ai, radiografii sau documente medicale anterioare. Restul ne ocupăm noi.</p>
+        </details>
+        <details>
+          <summary>Care este programul clinicii?</summary>
+          <p>Luni–Vineri 09:00–18:00, sâmbătă 10:00–14:00. Duminica clinica este închisă.</p>
+        </details>
+      </div>
+    </div>
+  </section>
 
-<div class="sticky"><a href="tel:+40721234567" class="c">Sună</a><a href="https://wa.me/40721234567" target="_blank" rel="noopener" class="w">WhatsApp</a></div>
+  <section id="contact" class="sec">
+    <div class="wrap">
+      <div class="cgrid">
+        <div class="reveal-left">
+          <span class="rule"></span>
+          <h2>Ia legătura cu noi</h2>
+          <p class="cd">Suntem disponibili pentru consultații și urgențe. Programează-te astăzi pentru un zâmbet mai
+            sănătos.</p>
+          <div class="ci">
+            <div class="ic">📍</div>
+            <div><small>Adresă</small>Str. Florilor 12, Sector 1<br>București, România</div>
+          </div>
+          <div class="ci">
+            <div class="ic">📞</div>
+            <div><small>Telefon</small><a href="tel:+40721234567">+40 721 234 567</a></div>
+          </div>
+          <div class="ci">
+            <div class="ic">✉️</div>
+            <div><small>Email</small><a href="mailto:contact@zenitdental.ro">contact@zenitdental.ro</a></div>
+          </div>
+          <div class="ci">
+            <div class="ic">🕐</div>
+            <div><small>Program</small>Luni–Vineri: 09:00–18:00<br>Sâmbătă: 10:00–14:00 · Duminică: închis</div>
+          </div>
+        </div>
+        <form class="form reveal-right" id="f">
+          <h3>Programare online</h3>
+          <div class="fr">
+            <div class="fg"><label for="n">Nume pacient</label><input id="n" type="text" placeholder="Nume și prenume"
+                required></div>
+            <div class="fg"><label for="t">Telefon</label><input id="t" type="tel" placeholder="07xx xxx xxx" required>
+            </div>
+          </div>
+          <div class="fr">
+            <div class="fg"><label for="e">Email</label><input id="e" type="email" placeholder="email@domeniu.ro"></div>
+            <div class="fg"><label for="s">Tipul serviciului</label><select id="s">
+                <option>Consultație generală</option>
+                <option>Urgență / durere</option>
+                <option>Estetică dentară</option>
+                <option>Implantologie</option>
+                <option>Ortodonție</option>
+                <option>Igienizare</option>
+              </select></div>
+          </div>
+          <div class="fr">
+            <div class="fg"><label for="d">Data preferată</label><input id="d" type="date"></div>
+            <div class="fg"><label for="i">Interval orar</label><select id="i">
+                <option>Dimineața (09:00–12:00)</option>
+                <option>Prânz (12:00–15:00)</option>
+                <option>După-amiază (15:00–18:00)</option>
+              </select></div>
+          </div>
+          <div class="fr one">
+            <div class="fg"><label for="m">Simptome / detalii</label><textarea id="m"
+                placeholder="Descrie simptomele sau istoricul medical relevant"></textarea></div>
+          </div>
+          <button class="btn gold" type="submit">Trimite solicitarea</button>
+          <p class="gdpr">Datele sunt procesate confidențial, conform GDPR.</p>
+        </form>
+      </div>
+    </div>
+  </section>
 
-<script>
-const dr = document.getElementById('dr');
+  <footer>
+    <div class="wrap">
+      <div class="fg4">
+        <div>
+          <div class="fbrand"><span class="mark"></span><span><b>ZENIT</b><i>dental</i></span></div>
+          <p style="max-width:300px">Zâmbete sănătoase încep aici. Servicii stomatologice de excelență, tehnologie
+            modernă și o atmosferă primitoare în București.</p>
+        </div>
+        <div>
+          <h4>Tratamente</h4>
+          <ul>
+            <li><a href="#services">Implantologie</a></li>
+            <li><a href="#services">Ortodonție</a></li>
+            <li><a href="#services">Estetică dentară</a></li>
+            <li><a href="#services">Igienizare</a></li>
+            <li><a href="#services">Chirurgie dentară</a></li>
+            <li><a href="#services">Parodontologie</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Program</h4>
+          <div class="sr"><b>Luni–Vineri</b><span>09:00–18:00</span></div>
+          <div class="sr"><b>Sâmbătă</b><span>10:00–14:00</span></div>
+          <div class="sr"><b>Duminică</b><span>Închis</span></div>
+          <p style="margin-top:14px"><a href="tel:+40721234567" style="color:#fff;font:700 16px var(--fs)">+40 721 234
+              567</a></p>
+        </div>
+        <div>
+          <h4>Locație</h4>
+          <p style="margin-bottom:16px">Str. Florilor 12, Sector 1<br>București, România</p><a
+            href="https://maps.google.com" target="_blank" rel="noopener" class="btn ghost">Vezi pe hartă</a>
+        </div>
+      </div>
+      <div class="fb"><span>© 2026 Zenit Dental. Toate drepturile rezervate.</span>
+        <div><a href="#">Confidențialitate</a><a href="#">GDPR</a><a href="#">Cookies</a></div>
+      </div>
+    </div>
+  </footer>
 
-const close = () => dr.classList.remove('open');
+  <div class="sticky"><a href="tel:+40721234567" class="c">Sună</a><a href="https://wa.me/40721234567" target="_blank"
+      rel="noopener" class="w">WhatsApp</a></div>
 
-document.getElementById('bb').onclick = () => {
-    dr.classList.add('open');
-};
+  <script>
+    const dr = document.getElementById('dr');
 
-document.getElementById('dc').onclick = close;
+    const close = () => dr.classList.remove('open');
 
-dr.onclick = e => {
-    if (e.target === dr || e.target.tagName === 'A') {
+    document.getElementById('bb').onclick = () => {
+      dr.classList.add('open');
+    };
+
+    document.getElementById('dc').onclick = close;
+
+    dr.onclick = e => {
+      if (e.target === dr || e.target.tagName === 'A') {
         close();
-    }
-};
+      }
+    };
 
 
-/* SCROLL REVEAL */
+    /* SCROLL REVEAL */
 
-const revealObserver = new IntersectionObserver((entries, observer) => {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
 
-    entries.forEach(entry => {
+      entries.forEach(entry => {
 
         if (entry.isIntersecting) {
 
-            entry.target.classList.add('visible');
+          entry.target.classList.add('visible');
 
-            observer.unobserve(entry.target);
+          observer.unobserve(entry.target);
 
         }
 
+      });
+
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -50px 0px'
     });
 
-}, {
-    threshold: 0.12,
-    rootMargin: '0px 0px -50px 0px'
-});
+
+    document.querySelectorAll(
+      '.reveal, .reveal-left, .reveal-right, .stagger'
+    ).forEach(el => {
+
+      revealObserver.observe(el);
+
+    });
 
 
-document.querySelectorAll(
-    '.reveal, .reveal-left, .reveal-right, .stagger'
-).forEach(el => {
+    /* FORM */
 
-    revealObserver.observe(el);
+    document.getElementById('f').onsubmit = e => {
 
-});
+      e.preventDefault();
 
+      const b = e.target.querySelector('button');
 
-/* FORM */
+      b.textContent = 'Solicitare trimisă. Te sunăm noi.';
+      b.disabled = true;
 
-document.getElementById('f').onsubmit = e => {
-
-    e.preventDefault();
-
-    const b = e.target.querySelector('button');
-
-    b.textContent = 'Solicitare trimisă. Te sunăm noi.';
-    b.disabled = true;
-
-};
-</script>
+    };
+  </script>
 </body>
+
 </html>
