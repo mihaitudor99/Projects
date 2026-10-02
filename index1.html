@@ -958,131 +958,322 @@
       background: #25d366;
       color: #fff
     }
-#stats {
-  position: relative;
-  width: 100%;
-  padding: 80px 0;
-  background: #f8f4ef;
+
+/* =========================================
+   FIXED TEETH
+========================================= */
+
+#dinti-ficsi {
+  background: var(--soft);
+  padding: 110px 0 120px;
+  overflow: hidden;
 }
 
-.stats-wrap {
-  width: 100%;
-  padding: 0 6vw;
-}
-
-.stats-row {
+.fixed-teeth-intro {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid #d4cdc6;
-  border-bottom: 1px solid #d4cdc6;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 70px;
+  align-items: end;
+  margin-bottom: 58px;
 }
 
-.stat-card {
+.eyebrow-dark {
+  display: block;
+  font: 700 11px var(--fs);
+  letter-spacing: 1.5px;
+  color: var(--gold-d);
+  margin-bottom: 18px;
+}
+
+.fixed-teeth-intro h2 {
+  font-size: clamp(3rem, 5vw, 5rem);
+  color: var(--ink);
+  margin: 0;
+}
+
+.fixed-teeth-intro h2 em {
+  color: var(--gold-d);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.fixed-teeth-copy {
+  max-width: 470px;
+  padding-bottom: 5px;
+}
+
+.fixed-teeth-copy p {
+  color: var(--muted);
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+
+/* GRID */
+
+.fixed-teeth-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+
+/* CARD */
+
+.fixed-teeth-card {
   position: relative;
+  min-height: 310px;
   display: flex;
   flex-direction: column;
-  min-height: 240px;
-  padding: 35px 30px;
-  border-right: 1px solid #d4cdc6;
-  transition: transform .4s ease, background-color .4s ease;
+
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+
+  padding: 28px 30px;
+
+  overflow: hidden;
+
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
 }
 
-.stat-card:first-child {
-  border-left: 1px solid #d4cdc6;
+.fixed-teeth-card::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -100px;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(217,177,101,.16);
+
+  transition: transform .5s ease;
 }
 
-.stat-card:hover {
-  background: #f2eae0;
-  transform: translateY(-5px);
+.fixed-teeth-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(217,177,101,.45);
+  box-shadow: 0 20px 50px rgba(4,24,50,.10);
 }
 
-.stat-number {
-  font-family: "Outfit", sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: .08em;
-  color: #bfa278;
-  margin-bottom: auto;
+.fixed-teeth-card:hover::after {
+  transform: scale(1.25);
 }
 
-.stat-content {
+
+/* TOP */
+
+.ft-top {
   display: flex;
-  flex-direction: column;
-  gap: 7px;
+  justify-content: space-between;
+  align-items: center;
+
+  color: var(--gold-d);
+
+  font: 700 11px var(--fs);
+  letter-spacing: 1px;
 }
 
-.stat-content strong {
-  font-family: "Outfit", sans-serif;
-  font-size: clamp(26px, 2.2vw, 38px);
-  font-weight: 400;
-  line-height: 1.1;
-  color: #1d2939;
+.ft-label {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  padding: 6px 10px;
+
+  border: 1px solid rgba(169,130,55,.25);
+  border-radius: 50px;
 }
 
-.stat-content span {
-  font-family: "Outfit", sans-serif;
-  font-size: 17px;
-  font-weight: 500;
-  color: #756e67;
+
+/* CONTENT */
+
+.ft-content {
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
 }
 
-.stat-content small {
-  max-width: 240px;
-  font-family: "Outfit", sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
-  font-weight: 400;
-  color: #9a938c;
+.ft-content h3 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.02;
+  color: var(--ink);
+  margin-bottom: 15px;
 }
 
-@media (max-width: 991px) {
-  #stats {
-    padding: 60px 0;
-  }
+.ft-content p {
+  max-width: 430px;
 
-  .stats-wrap {
-    padding: 0 24px;
-  }
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.65;
 
-  .stats-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .stat-card:nth-child(2) {
-    border-right: 0;
-  }
-
-  .stat-card:nth-child(3),
-  .stat-card:nth-child(4) {
-    border-top: 1px solid #d4cdc6;
-  }
+  margin-bottom: 25px;
 }
 
-@media (max-width: 575px) {
-  #stats {
-    padding: 45px 0;
+
+/* BOTTOM */
+
+.ft-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.ft-bottom strong {
+  font: 600 1.8rem var(--fh);
+  color: var(--gold-d);
+}
+
+.ft-bottom a {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--navy);
+  color: #fff;
+
+  font-size: 20px;
+
+  transition: .25s;
+}
+
+.ft-bottom a:hover {
+  background: var(--gold);
+  color: var(--navy2);
+  transform: rotate(-45deg);
+}
+
+
+/* SPECIAL CARD */
+
+.fixed-teeth-card.special {
+  background: linear-gradient(
+    145deg,
+    #fff,
+    #f5efe5
+  );
+}
+
+
+/* DARK CTA */
+
+.fixed-teeth-card.dark {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+.fixed-teeth-card.dark .ft-top {
+  color: var(--gold);
+}
+
+.fixed-teeth-card.dark .ft-label {
+  border-color: rgba(217,177,101,.35);
+}
+
+.fixed-teeth-card.dark h3 {
+  color: #fff;
+}
+
+.fixed-teeth-card.dark p {
+  color: #a9bad0;
+}
+
+.fixed-teeth-card.dark .ft-bottom {
+  border-color: rgba(255,255,255,.12);
+}
+
+.ft-action {
+  font: 700 11px var(--fs);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+
+/* NOTE */
+
+.fixed-teeth-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+
+  max-width: 760px;
+
+  margin-top: 30px;
+
+  color: var(--muted);
+}
+
+.fixed-teeth-note span {
+  color: var(--gold-d);
+  font-size: 18px;
+}
+
+.fixed-teeth-note p {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  #dinti-ficsi {
+    padding: 80px 0;
   }
 
-  .stats-row {
+  .fixed-teeth-intro {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .fixed-teeth-copy {
+    max-width: 600px;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  #dinti-ficsi {
+    padding: 65px 0;
+  }
+
+  .fixed-teeth-grid {
     grid-template-columns: 1fr;
   }
 
-  .stat-card {
-    min-height: 190px;
-    padding: 28px 24px;
-    border-right: 0;
-    border-left: 1px solid #d4cdc6;
-    border-right: 1px solid #d4cdc6;
-    border-bottom: 1px solid #d4cdc6;
+  .fixed-teeth-card {
+    min-height: 285px;
+    padding: 25px;
   }
 
-  .stat-card:first-child {
-    border-bottom: 1px solid #d4cdc6;
+  .fixed-teeth-intro h2 {
+    font-size: 3rem;
   }
 
-  .stat-card + .stat-card {
-    border-top: 0;
+  .ft-content h3 {
+    font-size: 2.2rem;
   }
+
 }
     @media(max-width:1100px) {
       .wrap {
@@ -1360,99 +1551,193 @@
     </div>
   </section>
 
-<section data-price-filter-root="" data-price-filter-id="price" data-price-filter-default="Dinți ficși"><div data-price-filter-header="" class="relative z-0 flex flex-col w-full items-start justify-center min-h-175"><video src="https://dentop.ro/app/uploads/2026/06/0629-22-2.mp4" alt="DentOP price hero" class="absolute inset-0 z-[-2] size-full object-cover" autoplay="" loop="" muted="" playsinline=""></video><div class="contact-header-overlay absolute inset-0 z-[-1] size-full"></div><div class="w-full px-6 pb-50 pt-45 md:pt-57.5 lg:pt-65 lg:pb-60 lg:px-[12.5vw]"><div class="w-full space-y-6"><h1 class="font-outfit text-[48px] font-normal leading-none tracking-[-1.2px] text-white md:text-[60px] md:tracking-[-2px] lg:text-[72px] xl:text-[84px]">
-Prețuri</h1><p class="md:w-[80vw] lg:w-[65vw] xl:w-[55vw] font-outfit text-lg font-medium leading-normal text-[#f8f4ef] md:text-xl">
-Echipa multidisciplinară a clinicilor DentOP este organizată astfel încât să ofere servicii stomatologice care acoperă toate specialitățile de la implantologie până la endodonție la microscop și protetică</p></div><div class="hidden md:inline-block md:mt-12" data-price-filter-chips=""><div class="inline-flex flex-row gap-1 rounded-xl border border-[#E9DDCB] bg-[#F2EAE0] p-1.5" role="group" aria-label="Categorie servicii">
-<button type="button" data-price-filter-chip="" data-price-filter-value="Dinți ficși" data-chip-label="Dinți ficși" aria-pressed="true" class="price-filter-chip cursor-pointer hover:price-filter-chip-active price-filter-chip-active">
-Dinți ficși
-</button>
-<button type="button" data-price-filter-chip="" data-price-filter-value="Implantologie" data-chip-label="Implantologie" aria-pressed="false" class="price-filter-chip cursor-pointer hover:price-filter-chip-active">
-Implantologie
-</button>
-<button type="button" data-price-filter-chip="" data-price-filter-value="Protetică" data-chip-label="Protetică" aria-pressed="false" class="price-filter-chip cursor-pointer hover:price-filter-chip-active">
-Protetică
-</button>
-<button type="button" data-price-filter-chip="" data-price-filter-value="Terapie" data-chip-label="Terapie" aria-pressed="false" class="price-filter-chip cursor-pointer hover:price-filter-chip-active">
-Terapie
-</button></div></div><div class="w-full mt-12"><div class="md:hidden" data-price-filter=""><div class="relative">
-<button type="button" class="flex w-full items-center justify-between rounded-lg border border-[#E9DDCB] bg-white px-3.5 py-2.5 font-outfit text-base font-medium text-[#1D2939] transition-colors hover:bg-[#FDFBF8] price-filter-shadow" aria-expanded="false" aria-controls="price-filter-panel-6abf89ea67e1d" data-price-filter-toggle="">
-<span data-price-filter-label="" class="font-outfit font-medium text-base text-[#756E67]">Dinți ficși</span>
-<svg class="size-5 text-[#735B41] transition-transform" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-</svg>
-</button><div id="price-filter-panel-6abf89ea67e1d" class="absolute z-50 left-0 right-0 mt-2 hidden rounded-lg border border-[#E9DDCB] bg-white price-filter-shadow" data-price-filter-panel=""><ul class="flex flex-col py-1" role="listbox"><li>
-<button type="button" class="flex w-full items-center justify-between px-3.5 py-2 text-left font-outfit text-base text-[#1D2939] transition-colors hover:bg-[#F5EFE7]" data-price-filter-option="Dinți ficși" role="option" aria-selected="true">
-<span>Dinți ficși</span>
-</button></li><li>
-<button type="button" class="flex w-full items-center justify-between px-3.5 py-2 text-left font-outfit text-base text-[#1D2939] transition-colors hover:bg-[#F5EFE7]" data-price-filter-option="Implantologie" role="option" aria-selected="false">
-<span>Implantologie</span>
-</button></li><li>
-<button type="button" class="flex w-full items-center justify-between px-3.5 py-2 text-left font-outfit text-base text-[#1D2939] transition-colors hover:bg-[#F5EFE7]" data-price-filter-option="Protetică" role="option" aria-selected="false">
-<span>Protetică</span>
-</button></li><li>
-<button type="button" class="flex w-full items-center justify-between px-3.5 py-2 text-left font-outfit text-base text-[#1D2939] transition-colors hover:bg-[#F5EFE7]" data-price-filter-option="Terapie" role="option" aria-selected="false">
-<span>Terapie</span>
-</button></li></ul></div></div></div></div></div></div><div class="w-full bg-white grid grid-cols-1 gap-y-[54px] md:grid-cols-2 md:gap-x-5 px-6 lg:px-[12.5vw] -mt-[90px] pb-24" data-price-filter-list=""><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white" data-price-card="true" data-price-category="Dinți ficși" aria-hidden="true" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Dantură fixă pe 4 implanturi standard</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-14500 lei</div><p class="font-outfit font-normal text-[#756E67] text-base lg:text-lg">Sedare conștientă. Prf-vindecare accelerată. Computer tomograf. Extracții dentare. Rezerva postoperatorie. Lucrare fixă provizorie.</p></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white" data-price-card="true" data-price-category="Dinți ficși" aria-hidden="true" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Dantură fixă pe 6 implanturi standard</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-17500 lei</div><p class="font-outfit font-normal text-[#756E67] text-base lg:text-lg">Sedare conștientă. Prf-vindecare accelerată. Computer tomograf. Extracții dentare. Rezerva postoperatorie. Lucrare fixă provizorie.</p></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white" data-price-card="true" data-price-category="Dinți ficși" aria-hidden="true" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Dantură fixă pe 4 implanturi premium</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-20000 lei</div><p class="font-outfit font-normal text-[#756E67] text-base lg:text-lg">Sedare conștientă. Prf-vindecare accelerată. Computer tomograf. Extracții dentare. Rezerva postoperatorie. Lucrare fixă provizorie.</p></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white" data-price-card="true" data-price-category="Dinți ficși" aria-hidden="true" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Dantură fixă pe 6 implanturi premium</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-24000 lei</div><p class="font-outfit font-normal text-[#756E67] text-base lg:text-lg">Sedare conștientă. Prf-vindecare accelerată. Computer tomograf. Extracții dentare. Rezerva postoperatorie. Lucrare fixă provizorie.</p></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white" data-price-card="true" data-price-category="Dinți ficși" aria-hidden="true" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Dantură fixă pe 4 implanturi zigomatice</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-36000 lei</div><p class="font-outfit font-normal text-[#756E67] text-base lg:text-lg">Sedare conștientă. Prf-vindecare accelerată. Computer tomograf. Extracții dentare. Rezerva postoperatorie. Lucrare fixă provizorie.</p></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white" data-price-card="true" data-price-category="Dinți ficși" aria-hidden="true" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Dantură fixă pe implanturi convenționale și 2 implanturi zigomatice</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-33000 lei</div><p class="font-outfit font-normal text-[#756E67] text-base lg:text-lg">Sedare conștientă. Prf-vindecare accelerată. Computer tomograf. Extracții dentare. Rezerva postoperatorie. Lucrare fixă provizorie.</p></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Implantologie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-IMPLANT Standard</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-2200 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Implantologie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Sinus Lift</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-3500 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Implantologie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-IMPLANT Premium</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-3500 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Implantologie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Aditie de os 1-2 dinti</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-1500 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Implantologie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-PRF- Vindecare Accelerata</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-800 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Implantologie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Aditie de os 3-5 dinti</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-2500 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Protetică" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Coroană zirconiu pe dinte</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-1750 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Protetică" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Coroană zirconiu pe implant standard</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-1750 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Protetică" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Coroană ceramică pe dinte</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-2600 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Protetică" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Coroană zirconiu pe implant premium</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-2600 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Protetică" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Lucrare definitivă Standard cu dinți din zirconiu pe 4/6 implanturi - structură Cobalt-Crom</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-14500 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Protetică" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Lucrare definitivă Standard cu dinți din zirconiu pe 4/6 implanturi - structură Titan</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-16500 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Protetică" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Lucrare definitivă pe 4/6 implanturi Premium cu dinți din zirconiu - structură Cobalt-Crom</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-18500 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Protetică" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Lucrare definitivă pe 4/6 implanturi Premium cu dinți din zirconiu - structură Titan</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-20500 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Terapie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Igienizare completă (detartraj + periaj profesional + Air-Flow)</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-500 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Terapie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Extractie dentară</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-250 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Terapie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Obturație cu compozit fotopolimerizabil</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-450 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Terapie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Tratament endodontic sub microscop - dinte frontal</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-850 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Terapie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Tratament endodontic sub microscop - premolar</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-950 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Terapie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Tratament endodontic sub microscop - molar</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-1200 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Terapie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Retratament endodontic sub microscop - dinte frontal</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-950 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Terapie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Retratament endodontic sub microscop - premolar</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-1000 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Terapie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Retratament endodontic sub microscop - molar</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-1250 lei</div></div><div data-viewport-anim="fade translate-up" class="z-1 w-full h-full p-8 rounded-2xl border border-[#D4CDC6] flex flex-col gap-4 price-card-shadow-01 price-card-shadow-02 bg-white hidden" data-price-card="true" data-price-category="Terapie" aria-hidden="false" style="translate: none; rotate: none; scale: none; opacity: 0; transform: translate(0px, 100px);"><div class="font-outfit font-normal text-[#BFA278] text-2xl xl:text-4xl flex-1">
-Chiuretaj parodontal cu laser</div><div class="font-outfit font-light text-[#B42318] text-4xl xl:text-5xl">
-1500 lei</div></div></div></section>
+  <section id="dinti-ficsi" class="fixed-teeth">
+  <div class="wrap">
+
+    <div class="fixed-teeth-intro reveal">
+      <div>
+        <span class="rule"></span>
+        <span class="eyebrow-dark">REABILITARE ORALĂ</span>
+
+        <h2>
+          Dinți ficși.<br>
+          <em>Un zâmbet din nou al tău.</em>
+        </h2>
+      </div>
+
+      <div class="fixed-teeth-copy">
+        <p>
+          Soluții complete pentru pacienții care își doresc o dantură
+          fixă, funcțională și naturală, de la variante pe 4 sau 6
+          implanturi până la cazuri complexe.
+        </p>
+
+        <a href="#contact" class="btn gold">
+          Programează o consultație
+        </a>
+      </div>
+    </div>
+
+
+    <div class="fixed-teeth-grid stagger">
+
+      <article class="fixed-teeth-card featured">
+        <div class="ft-top">
+          <span>01</span>
+          <span class="ft-label">STANDARD</span>
+        </div>
+
+        <div class="ft-content">
+          <h3>Dantură fixă<br>pe 4 implanturi</h3>
+
+          <p>
+            O soluție completă pentru reabilitarea unei arcade,
+            cu lucrare fixă provizorie.
+          </p>
+
+          <div class="ft-bottom">
+            <strong>14.500 lei</strong>
+            <a href="#contact" aria-label="Solicită o consultație">
+              →
+            </a>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="fixed-teeth-card">
+        <div class="ft-top">
+          <span>02</span>
+          <span class="ft-label">STANDARD</span>
+        </div>
+
+        <div class="ft-content">
+          <h3>Dantură fixă<br>pe 6 implanturi</h3>
+
+          <p>
+            Stabilitate crescută și o soluție completă
+            pentru reabilitarea arcadei.
+          </p>
+
+          <div class="ft-bottom">
+            <strong>17.500 lei</strong>
+            <a href="#contact" aria-label="Solicită o consultație">
+              →
+            </a>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="fixed-teeth-card">
+        <div class="ft-top">
+          <span>03</span>
+          <span class="ft-label">PREMIUM</span>
+        </div>
+
+        <div class="ft-content">
+          <h3>Dantură fixă<br>pe 4 implanturi</h3>
+
+          <p>
+            Variantă premium pentru o reabilitare completă,
+            cu accent pe estetică și funcționalitate.
+          </p>
+
+          <div class="ft-bottom">
+            <strong>20.000 lei</strong>
+            <a href="#contact" aria-label="Solicită o consultație">
+              →
+            </a>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="fixed-teeth-card">
+        <div class="ft-top">
+          <span>04</span>
+          <span class="ft-label">PREMIUM</span>
+        </div>
+
+        <div class="ft-content">
+          <h3>Dantură fixă<br>pe 6 implanturi</h3>
+
+          <p>
+            Soluție premium pentru stabilitate, confort
+            și un rezultat estetic natural.
+          </p>
+
+          <div class="ft-bottom">
+            <strong>24.000 lei</strong>
+            <a href="#contact" aria-label="Solicită o consultație">
+              →
+            </a>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="fixed-teeth-card special">
+        <div class="ft-top">
+          <span>05</span>
+          <span class="ft-label">CAZURI COMPLEXE</span>
+        </div>
+
+        <div class="ft-content">
+          <h3>Dantură fixă<br>pe implanturi zigomatice</h3>
+
+          <p>
+            Pentru situațiile în care este necesară o abordare
+            avansată de reabilitare.
+          </p>
+
+          <div class="ft-bottom">
+            <strong>de la 33.000 lei</strong>
+            <a href="#contact" aria-label="Solicită o consultație">
+              →
+            </a>
+          </div>
+        </div>
+      </article>
+
+
+      <article class="fixed-teeth-card dark">
+        <div class="ft-top">
+          <span>06</span>
+          <span class="ft-label">CONSULTAȚIE</span>
+        </div>
+
+        <div class="ft-content">
+          <h3>Nu știi ce<br>variantă ți se potrivește?</h3>
+
+          <p>
+            Fiecare caz este evaluat individual. Stabilim împreună
+            soluția potrivită pentru situația ta.
+          </p>
+
+          <div class="ft-bottom">
+            <span class="ft-action">Vorbește cu noi</span>
+            <a href="#contact" aria-label="Programează o consultație">
+              →
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+
+    <div class="fixed-teeth-note reveal">
+      <span>✦</span>
+      <p>
+        Prețurile afișate includ componentele și procedurile
+        menționate pentru fiecare variantă. Planul final de tratament
+        se stabilește după consultație și evaluarea cazului.
+      </p>
+    </div>
+
+  </div>
+</section>
 
   <section id="stats">
     <div class="wrap">
